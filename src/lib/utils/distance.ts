@@ -25,7 +25,7 @@ function euclideanDistance(c1: Circle, c2: Circle): number {
  * Matrix properties:
  * - Diagonal entries (i === j) are exactly 0
  * - Matrix is symmetric: distance[i][j] === distance[j][i]
- * - All distances are non-negative
+ * - All distances are non-negative integers (rounded to nearest whole number)
  * - Uses Euclidean distance formula: sqrt((x2-x1)² + (y2-y1)²)
  *
  * Performance characteristics:
@@ -67,7 +67,7 @@ export function createDistanceMatrix(circles: Circle[]): number[][] {
 	// This optimization reduces computations from n² to n(n-1)/2
 	for (let i = 0; i < n; i++) {
 		for (let j = i + 1; j < n; j++) {
-			const distance = euclideanDistance(circles[i], circles[j]);
+			const distance = Math.round(euclideanDistance(circles[i], circles[j]));
 			matrix[i][j] = distance;
 			matrix[j][i] = distance; // Exploit symmetry
 		}

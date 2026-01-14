@@ -1,13 +1,29 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { viewport } from '../stores/viewport';
-  import { visibleCircles } from '../stores/graph';
+  import { visibleCircles, graph } from '../stores/graph';
   import Circle from './Circle.svelte';
+  import Edge from './Edge.svelte';
 
   let svgElement: SVGSVGElement;
   let containerElement: HTMLDivElement;
   let isDragging = $state(false);
   let dragStart = $state({ x: 0, y: 0 });
+
+  // Compute visible edges (draw if at least one circle is visible)
+  let visibleEdges = $derived.by(() => {
+    const visibleIds = new Set($visibleCircles.map(c => c.id));
+    return $graph.edges.filter(e =>
+      visibleIds.has(e.source) || visibleIds.has(e.target)
+    );
+  });
+
+  // Create lookup for circle positions
+  let circlePositions = $derived.by(() => {
+    const map = new Map<number, { x: number; y: number }>();
+    $graph.allCircles.forEach(c => map.set(c.id, { x: c.x, y: c.y }));
+    return map;
+  });
 
   onMount(() => {
     // Set initial viewport size based on container
@@ -80,20 +96,44 @@
       transform="translate({$viewport.x}, {$viewport.y}) scale({$viewport.zoom})"
       style="will-change: transform"
     >
+      <!-- Render edges first (behind circles) -->
+      {#each visibleEdges as edge (`${edge.source}-${edge.target}-${edge.movieTitle}`)}
+        {@const sourcePos = circlePositions.get(edge.source)}
+        {@const targetPos = circlePositions.get(edge.target)}
+        {#if sourcePos && targetPos}
+          <Edge
+            x1={sourcePos.x}
+            y1={sourcePos.y}
+            x2={targetPos.x}
+            y2={targetPos.y}
+            movieTitle={edge.movieTitle}
+          />
+        {/if}
+      {/each}
+
+      <!-- Render circles -->
       {#each $visibleCircles as circle (circle.id)}
         <Circle
           x={circle.x}
           y={circle.y}
           radius={circle.radius}
           delay={circle.delay}
+          name={circle.name}
         />
       {/each}
     </g>
   </svg>
 
   <div class="info-overlay">
-    <div>Visible circles: {$visibleCircles.length}</div>
+    <div>Visible actors: {$visibleCircles.length}</div>
+    <div>Visible edges: {visibleEdges.length}</div>
     <div>Zoom: {$viewport.zoom.toFixed(2)}x</div>
+    {#if $graph.loading}
+      <div class="loading">Loading...</div>
+    {/if}
+    {#if $graph.error}
+      <div class="error">{$graph.error}</div>
+    {/if}
   </div>
 </div>
 
@@ -127,5 +167,15 @@
 
   .info-overlay div {
     margin: 2px 0;
+  }
+
+  .loading {
+    color: #0066cc;
+    font-weight: bold;
+  }
+
+  .error {
+    color: #dc3545;
+    font-weight: bold;
   }
 </style>

@@ -15,6 +15,8 @@ export interface Circle {
   x: number;
   y: number;
   radius: number;
+  name?: string;
+  recognizability?: number;
 }
 
 export interface ViewportState {
@@ -27,4 +29,10 @@ export interface ViewportState {
 
 export interface CircleWithDelay extends Circle {
   delay: number;
+}
+
+export interface GraphEdge {
+  source: number;
+  target: number;
+  movieTitle: string;
 }

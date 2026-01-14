@@ -7,9 +7,10 @@
     y: number;
     radius: number;
     delay?: number;
+    name?: string;
   }
 
-  let { x, y, radius, delay = 0 }: Props = $props();
+  let { x, y, radius, delay = 0, name }: Props = $props();
 
   let hovered = $state(false);
 </script>
@@ -22,10 +23,15 @@
   class:hovered
   role="button"
   tabindex="0"
-  aria-label="Graph node"
+  aria-label={name || "Graph node"}
   onmouseenter={() => hovered = true}
   onmouseleave={() => hovered = false}
-/>
+  onclick={() => console.log(name)}
+>
+  {#if name}
+    <title>{name}</title>
+  {/if}
+</circle>
 
 <style>
   .graph-circle {
