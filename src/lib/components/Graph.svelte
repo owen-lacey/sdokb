@@ -9,6 +9,7 @@
   let containerElement: HTMLDivElement;
   let isDragging = $state(false);
   let dragStart = $state({ x: 0, y: 0 });
+  let hoveredCircleId = $state<number | null>(null);
 
   // Compute visible edges (draw if at least one circle is visible)
   let visibleEdges = $derived.by(() => {
@@ -73,6 +74,25 @@
 
     viewport.zoom(factor, mouseX, mouseY);
   }
+
+  let connectedCircleIds = $derived.by(() => {
+    if (hoveredCircleId === null) return null;
+    const connected = new Set<number>();
+    connected.add(hoveredCircleId);
+    for (const edge of $graph.edges) {
+      if (edge.source === hoveredCircleId || edge.target === hoveredCircleId) {
+        connected.add(edge.source);
+        connected.add(edge.target);
+      }
+    }
+    return connected;
+  });
+
+  function isEdgeDimmed(edge: { source: number; target: number }) {
+    return hoveredCircleId !== null
+      && edge.source !== hoveredCircleId
+      && edge.target !== hoveredCircleId;
+  }
 </script>
 
 <div
@@ -107,6 +127,7 @@
             x2={targetPos.x}
             y2={targetPos.y}
             movieTitle={edge.movieTitle}
+            dimmed={isEdgeDimmed(edge)}
           />
         {/if}
       {/each}
@@ -114,11 +135,16 @@
       <!-- Render circles -->
       {#each $visibleCircles as circle (circle.id)}
         <Circle
+          id={circle.id}
           x={circle.x}
           y={circle.y}
           radius={circle.radius}
           delay={circle.delay}
           name={circle.name}
+          isHovered={hoveredCircleId === circle.id}
+          isDimmed={hoveredCircleId !== null && !connectedCircleIds?.has(circle.id)}
+          on:hover={(event) => hoveredCircleId = event.detail}
+          on:unhover={() => hoveredCircleId = null}
         />
       {/each}
     </g>
