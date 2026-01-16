@@ -1,0 +1,2224 @@
+{
+  "step": "Step 3: Swap Optimization",
+  "timestamp": "2026-01-16T16:27:04.075719",
+  "config": {
+    "num_actors": 100,
+    "stagnation_threshold": 1000,
+    "max_iterations": 50000,
+    "random_seed": 42
+  },
+  "stats": {
+    "iterations": 9762,
+    "swaps_accepted": 156,
+    "stagnation_threshold": 1000,
+    "elapsed_seconds": 0.06,
+    "stopped_reason": "stagnation"
+  },
+  "metrics": {
+    "edge_count": 324,
+    "total_distance": 120943.15,
+    "avg_distance": 373.28,
+    "min_distance": 128.16,
+    "max_distance": 1049.88
+  },
+  "actors": [
+    {
+      "person_id": 7499,
+      "name": "Jared Leto",
+      "recognizability": 10.0,
+      "degree": 8,
+      "ordinal": 35,
+      "x": -325.95808629734404,
+      "y": 352.3511401675511
+    },
+    {
+      "person_id": 5530,
+      "name": "James McAvoy",
+      "recognizability": 10.0,
+      "degree": 6,
+      "ordinal": 38,
+      "x": -497.4678977968661,
+      "y": -46.105212954358386
+    },
+    {
+      "person_id": 5472,
+      "name": "Colin Firth",
+      "recognizability": 10.0,
+      "degree": 9,
+      "ordinal": 47,
+      "x": 529.654350906599,
+      "y": -163.29809725073105
+    },
+    {
+      "person_id": 5469,
+      "name": "Ralph Fiennes",
+      "recognizability": 10.0,
+      "degree": 17,
+      "ordinal": 13,
+      "x": 292.3508898303222,
+      "y": -64.27252302048532
+    },
+    {
+      "person_id": 90633,
+      "name": "Gal Gadot",
+      "recognizability": 10.0,
+      "degree": 7,
+      "ordinal": 45,
+      "x": 204.57821608011034,
+      "y": 502.5412953235582
+    },
+    {
+      "person_id": 5374,
+      "name": "Jim Parsons",
+      "recognizability": 10.0,
+      "degree": 3,
+      "ordinal": 71,
+      "x": 496.0450713140591,
+      "y": 463.39970568077615
+    },
+    {
+      "person_id": 4430,
+      "name": "Sharon Stone",
+      "recognizability": 10.0,
+      "degree": 9,
+      "ordinal": 23,
+      "x": 86.01877803216861,
+      "y": -382.3620925586799
+    },
+    {
+      "person_id": 112,
+      "name": "Cate Blanchett",
+      "recognizability": 10.0,
+      "degree": 13,
+      "ordinal": 12,
+      "x": -249.5650704697184,
+      "y": -144.6280595231938
+    },
+    {
+      "person_id": 1190668,
+      "name": "Timoth\u00e9e Chalamet",
+      "recognizability": 10.0,
+      "degree": 11,
+      "ordinal": 28,
+      "x": -145.8097043457637,
+      "y": -405.38812281392876
+    },
+    {
+      "person_id": 63522,
+      "name": "Sof\u00eda Vergara",
+      "recognizability": 10.0,
+      "degree": 7,
+      "ordinal": 18,
+      "x": 247.17726281262037,
+      "y": -245.9743904321359
+    },
+    {
+      "person_id": 4491,
+      "name": "Jennifer Aniston",
+      "recognizability": 10.0,
+      "degree": 5,
+      "ordinal": 42,
+      "x": 505.9389918775131,
+      "y": 138.6569020927762
+    },
+    {
+      "person_id": 58225,
+      "name": "Zach Galifianakis",
+      "recognizability": 10.0,
+      "degree": 13,
+      "ordinal": 16,
+      "x": 252.21828598301488,
+      "y": 212.56983844325174
+    },
+    {
+      "person_id": 4690,
+      "name": "Christopher Walken",
+      "recognizability": 10.0,
+      "degree": 10,
+      "ordinal": 36,
+      "x": 2.373872123390888,
+      "y": -486.61521218632464
+    },
+    {
+      "person_id": 172069,
+      "name": "Chadwick Boseman",
+      "recognizability": 10.0,
+      "degree": 7,
+      "ordinal": 27,
+      "x": -163.42745830295615,
+      "y": 390.50155681205104
+    },
+    {
+      "person_id": 4724,
+      "name": "Kevin Bacon",
+      "recognizability": 10.0,
+      "degree": 7,
+      "ordinal": 9,
+      "x": -233.84298419604042,
+      "y": 96.5269845291481
+    },
+    {
+      "person_id": 40462,
+      "name": "Kristen Bell",
+      "recognizability": 10.0,
+      "degree": 8,
+      "ordinal": 40,
+      "x": -91.68432953415801,
+      "y": 503.97815797698206
+    },
+    {
+      "person_id": 1327,
+      "name": "Ian McKellen",
+      "recognizability": 10.0,
+      "degree": 8,
+      "ordinal": 44,
+      "x": 186.55076083411726,
+      "y": -503.18864616782844
+    },
+    {
+      "person_id": 37917,
+      "name": "Kristen Stewart",
+      "recognizability": 10.0,
+      "degree": 3,
+      "ordinal": 50,
+      "x": 465.76227984353045,
+      "y": 330.85570672871415
+    },
+    {
+      "person_id": 505710,
+      "name": "Zendaya",
+      "recognizability": 10.0,
+      "degree": 9,
+      "ordinal": 20,
+      "x": -234.88785241972255,
+      "y": -281.4741494092319
+    },
+    {
+      "person_id": 1136517,
+      "name": "Sia",
+      "recognizability": 10.0,
+      "degree": 4,
+      "ordinal": 51,
+      "x": -572.4595684732618,
+      "y": 71.34453352154465
+    },
+    {
+      "person_id": 932967,
+      "name": "Mahershala Ali",
+      "recognizability": 10.0,
+      "degree": 8,
+      "ordinal": 32,
+      "x": 77.83936270233941,
+      "y": 452.9249757013778
+    },
+    {
+      "person_id": 85138,
+      "name": "Demi Lovato",
+      "recognizability": 10.0,
+      "degree": 0,
+      "ordinal": 87,
+      "x": 89.17721199835879,
+      "y": 745.1492634769223
+    },
+    {
+      "person_id": 1283,
+      "name": "Helena Bonham Carter",
+      "recognizability": 10.0,
+      "degree": 7,
+      "ordinal": 54,
+      "x": -416.44249469273933,
+      "y": -422.5821205565703
+    },
+    {
+      "person_id": 1920,
+      "name": "Winona Ryder",
+      "recognizability": 10.0,
+      "degree": 2,
+      "ordinal": 69,
+      "x": -412.4082132073168,
+      "y": 527.1806765039368
+    },
+    {
+      "person_id": 119592,
+      "name": "Aubrey Plaza",
+      "recognizability": 10.0,
+      "degree": 1,
+      "ordinal": 81,
+      "x": 672.2893190132762,
+      "y": -269.86491350426695
+    },
+    {
+      "person_id": 1315036,
+      "name": "Daisy Ridley",
+      "recognizability": 10.0,
+      "degree": 6,
+      "ordinal": 59,
+      "x": -603.8968751133978,
+      "y": -138.95525980787198
+    },
+    {
+      "person_id": 31903,
+      "name": "Henry Winkler",
+      "recognizability": 10.0,
+      "degree": 6,
+      "ordinal": 70,
+      "x": -52.37862038463257,
+      "y": -672.0539265018862
+    },
+    {
+      "person_id": 81200,
+      "name": "Conan O'Brien",
+      "recognizability": 10.0,
+      "degree": 5,
+      "ordinal": 29,
+      "x": 387.870578024834,
+      "y": 203.85390529170934
+    },
+    {
+      "person_id": 16897,
+      "name": "Sidney Poitier",
+      "recognizability": 10.0,
+      "degree": 1,
+      "ordinal": 94,
+      "x": 644.3734248485652,
+      "y": -439.07048334969005
+    },
+    {
+      "person_id": 76594,
+      "name": "Miley Cyrus",
+      "recognizability": 10.0,
+      "degree": 2,
+      "ordinal": 79,
+      "x": 323.58712277165307,
+      "y": 638.1938373067882
+    },
+    {
+      "person_id": 58769,
+      "name": "Stephen Colbert",
+      "recognizability": 10.0,
+      "degree": 3,
+      "ordinal": 63,
+      "x": 589.1705153380897,
+      "y": 249.95620387629862
+    },
+    {
+      "person_id": 19394,
+      "name": "Idina Menzel",
+      "recognizability": 10.0,
+      "degree": 3,
+      "ordinal": 66,
+      "x": 163.8183824645903,
+      "y": 634.0059444253542
+    },
+    {
+      "person_id": 212225,
+      "name": "Kim Kardashian",
+      "recognizability": 10.0,
+      "degree": 4,
+      "ordinal": 75,
+      "x": -418.91960965483594,
+      "y": -557.5897781045129
+    },
+    {
+      "person_id": 998387,
+      "name": "Ed Sheeran",
+      "recognizability": 10.0,
+      "degree": 1,
+      "ordinal": 68,
+      "x": 655.4697169883688,
+      "y": -109.35927080585203
+    },
+    {
+      "person_id": 1009740,
+      "name": "Pitbull",
+      "recognizability": 10.0,
+      "degree": 1,
+      "ordinal": 91,
+      "x": 42.920982298349664,
+      "y": -766.1317049166839
+    },
+    {
+      "person_id": 1223786,
+      "name": "Emilia Clarke",
+      "recognizability": 10.0,
+      "degree": 0,
+      "ordinal": 88,
+      "x": -572.3219708051407,
+      "y": -491.9832941612139
+    },
+    {
+      "person_id": 113461,
+      "name": "John Legend",
+      "recognizability": 10.0,
+      "degree": 1,
+      "ordinal": 90,
+      "x": -546.1703904896007,
+      "y": 533.0083531732284
+    },
+    {
+      "person_id": 236695,
+      "name": "John Boyega",
+      "recognizability": 10.0,
+      "degree": 2,
+      "ordinal": 72,
+      "x": -683.4877673563278,
+      "y": -6.668723585681588
+    },
+    {
+      "person_id": 1821863,
+      "name": "Post Malone",
+      "recognizability": 10.0,
+      "degree": 3,
+      "ordinal": 61,
+      "x": -194.38019193917552,
+      "y": 599.1797234400454
+    },
+    {
+      "person_id": 226001,
+      "name": "Ariana Grande",
+      "recognizability": 10.0,
+      "degree": 3,
+      "ordinal": 92,
+      "x": 488.49937322013864,
+      "y": 597.1334543998785
+    },
+    {
+      "person_id": 527393,
+      "name": "Dylan O'Brien",
+      "recognizability": 10.0,
+      "degree": 1,
+      "ordinal": 67,
+      "x": -553.141721368441,
+      "y": -359.4916356211337
+    },
+    {
+      "person_id": 13565,
+      "name": "Steve McQueen",
+      "recognizability": 10.0,
+      "degree": 1,
+      "ordinal": 64,
+      "x": -607.9738405521764,
+      "y": 215.33185831231924
+    },
+    {
+      "person_id": 10215,
+      "name": "Paul McCartney",
+      "recognizability": 10.0,
+      "degree": 0,
+      "ordinal": 89,
+      "x": 758.5683902842909,
+      "y": -23.958239949957203
+    },
+    {
+      "person_id": 77234,
+      "name": "Priyanka Chopra Jonas",
+      "recognizability": 10.0,
+      "degree": 1,
+      "ordinal": 86,
+      "x": 435.0912146843199,
+      "y": -606.2141823683468
+    },
+    {
+      "person_id": 1493224,
+      "name": "Ruth Bader Ginsburg",
+      "recognizability": 10.0,
+      "degree": 0,
+      "ordinal": 98,
+      "x": -725.8154734154523,
+      "y": 326.790297516164
+    },
+    {
+      "person_id": 31136,
+      "name": "Chris Brown",
+      "recognizability": 10.0,
+      "degree": 0,
+      "ordinal": 78,
+      "x": 191.28381933055408,
+      "y": -684.8434130969764
+    },
+    {
+      "person_id": 87773,
+      "name": "Aishwarya Rai Bachchan",
+      "recognizability": 10.0,
+      "degree": 0,
+      "ordinal": 76,
+      "x": 690.0401895465877,
+      "y": 129.01370783955247
+    },
+    {
+      "person_id": 3223,
+      "name": "Robert Downey Jr.",
+      "recognizability": 10.0,
+      "degree": 18,
+      "ordinal": 0,
+      "x": 80.0,
+      "y": 0.0
+    },
+    {
+      "person_id": 2176,
+      "name": "Tommy Lee Jones",
+      "recognizability": 10.0,
+      "degree": 6,
+      "ordinal": 37,
+      "x": 331.34226651522187,
+      "y": 365.2564885399788
+    },
+    {
+      "person_id": 3291,
+      "name": "Hugh Grant",
+      "recognizability": 10.0,
+      "degree": 8,
+      "ordinal": 39,
+      "x": 403.03074041997854,
+      "y": -305.88596286283536
+    },
+    {
+      "person_id": 3293,
+      "name": "Rachel Weisz",
+      "recognizability": 10.0,
+      "degree": 5,
+      "ordinal": 43,
+      "x": -472.12090308596964,
+      "y": 242.28465256653877
+    },
+    {
+      "person_id": 3392,
+      "name": "Michael Douglas",
+      "recognizability": 10.0,
+      "degree": 11,
+      "ordinal": 19,
+      "x": -16.525954096270524,
+      "y": 357.3889937326106
+    },
+    {
+      "person_id": 86654,
+      "name": "Austin Butler",
+      "recognizability": 10.0,
+      "degree": 7,
+      "ordinal": 49,
+      "x": -118.76700073438177,
+      "y": -553.077209380896
+    },
+    {
+      "person_id": 543261,
+      "name": "Karen Gillan",
+      "recognizability": 10.0,
+      "degree": 13,
+      "ordinal": 14,
+      "x": -178.19733607776095,
+      "y": 253.4673734719905
+    },
+    {
+      "person_id": 234352,
+      "name": "Margot Robbie",
+      "recognizability": 10.0,
+      "degree": 13,
+      "ordinal": 17,
+      "x": -339.1214160884785,
+      "y": 14.023735242259795
+    },
+    {
+      "person_id": 1136406,
+      "name": "Tom Holland",
+      "recognizability": 10.0,
+      "degree": 13,
+      "ordinal": 6,
+      "x": -54.947874404091095,
+      "y": 204.40335393156403
+    },
+    {
+      "person_id": 1892,
+      "name": "Matt Damon",
+      "recognizability": 10.0,
+      "degree": 14,
+      "ordinal": 10,
+      "x": 112.45905075750106,
+      "y": -240.31845934659654
+    },
+    {
+      "person_id": 4587,
+      "name": "Halle Berry",
+      "recognizability": 10.0,
+      "degree": 11,
+      "ordinal": 31,
+      "x": 244.75522068131238,
+      "y": -380.6506035056849
+    },
+    {
+      "person_id": 4495,
+      "name": "Steve Carell",
+      "recognizability": 10.0,
+      "degree": 23,
+      "ordinal": 8,
+      "x": 225.43711111778805,
+      "y": 82.32927140978529
+    },
+    {
+      "person_id": 1922,
+      "name": "Catherine Zeta-Jones",
+      "recognizability": 10.0,
+      "degree": 5,
+      "ordinal": 24,
+      "x": 198.8723499861107,
+      "y": 347.05876795004315
+    },
+    {
+      "person_id": 3063,
+      "name": "Tilda Swinton",
+      "recognizability": 10.0,
+      "degree": 28,
+      "ordinal": 1,
+      "x": -83.42376542801547,
+      "y": 76.42300283168315
+    },
+    {
+      "person_id": 4785,
+      "name": "Jeff Goldblum",
+      "recognizability": 10.0,
+      "degree": 11,
+      "ordinal": 21,
+      "x": 371.8822074050051,
+      "y": 50.03622503327734
+    },
+    {
+      "person_id": 14406,
+      "name": "Lisa Kudrow",
+      "recognizability": 10.0,
+      "degree": 3,
+      "ordinal": 52,
+      "x": 377.49960588165817,
+      "y": -443.5020265559029
+    },
+    {
+      "person_id": 47296,
+      "name": "Jeffrey Dean Morgan",
+      "recognizability": 10.0,
+      "degree": 1,
+      "ordinal": 99,
+      "x": 316.0342084394752,
+      "y": -734.9301865456571
+    },
+    {
+      "person_id": 1619,
+      "name": "Chow Yun-Fat",
+      "recognizability": 10.0,
+      "degree": 0,
+      "ordinal": 96,
+      "x": -385.04469490446616,
+      "y": -687.4158733444598
+    },
+    {
+      "person_id": 30614,
+      "name": "Ryan Gosling",
+      "recognizability": 10.0,
+      "degree": 12,
+      "ordinal": 22,
+      "x": -314.9358630876071,
+      "y": 219.12417060028767
+    },
+    {
+      "person_id": 8261,
+      "name": "Willie Nelson",
+      "recognizability": 10.0,
+      "degree": 0,
+      "ordinal": 93,
+      "x": -767.656283637675,
+      "y": -110.92263155728772
+    },
+    {
+      "person_id": 51329,
+      "name": "Bradley Cooper",
+      "recognizability": 10.0,
+      "degree": 20,
+      "ordinal": 3,
+      "x": 97.35021775661767,
+      "y": 126.97612020667162
+    },
+    {
+      "person_id": 55466,
+      "name": "James Corden",
+      "recognizability": 10.0,
+      "degree": 15,
+      "ordinal": 41,
+      "x": -276.1342999313322,
+      "y": -438.8050232180952
+    },
+    {
+      "person_id": 51962,
+      "name": "Bill Cosby",
+      "recognizability": 10.0,
+      "degree": 0,
+      "ordinal": 84,
+      "x": 634.5097586955277,
+      "y": 376.02841132039885
+    },
+    {
+      "person_id": 27319,
+      "name": "Christoph Waltz",
+      "recognizability": 10.0,
+      "degree": 11,
+      "ordinal": 15,
+      "x": -41.12342073567558,
+      "y": -317.34659958316337
+    },
+    {
+      "person_id": 38673,
+      "name": "Channing Tatum",
+      "recognizability": 10.0,
+      "degree": 14,
+      "ordinal": 11,
+      "x": 82.93997745665037,
+      "y": 264.425717621207
+    },
+    {
+      "person_id": 1461,
+      "name": "George Clooney",
+      "recognizability": 10.0,
+      "degree": 15,
+      "ordinal": 5,
+      "x": 165.34159520495726,
+      "y": -105.1767887657731
+    },
+    {
+      "person_id": 59538,
+      "name": "David Beckham",
+      "recognizability": 10.0,
+      "degree": 1,
+      "ordinal": 73,
+      "x": 511.9582093880899,
+      "y": -459.8899779731461
+    },
+    {
+      "person_id": 1532,
+      "name": "Bill Murray",
+      "recognizability": 10.0,
+      "degree": 21,
+      "ordinal": 7,
+      "x": -104.29135445482777,
+      "y": -200.80665672725465
+    },
+    {
+      "person_id": 217371,
+      "name": "Adam Levine",
+      "recognizability": 10.0,
+      "degree": 1,
+      "ordinal": 62,
+      "x": -263.5098975720521,
+      "y": -577.7218481947576
+    },
+    {
+      "person_id": 1813,
+      "name": "Anne Hathaway",
+      "recognizability": 10.0,
+      "degree": 10,
+      "ordinal": 46,
+      "x": -495.61219471664555,
+      "y": -234.87986812017294
+    },
+    {
+      "person_id": 968660,
+      "name": "Nicki Minaj",
+      "recognizability": 10.0,
+      "degree": 0,
+      "ordinal": 95,
+      "x": -179.49035218548232,
+      "y": 763.009314145202
+    },
+    {
+      "person_id": 3359,
+      "name": "Laurence Olivier",
+      "recognizability": 10.0,
+      "degree": 1,
+      "ordinal": 85,
+      "x": -726.1051766319703,
+      "y": 152.22113016350707
+    },
+    {
+      "person_id": 5309,
+      "name": "Judi Dench",
+      "recognizability": 10.0,
+      "degree": 7,
+      "ordinal": 26,
+      "x": 377.361687846895,
+      "y": -174.35067119269317
+    },
+    {
+      "person_id": 15886,
+      "name": "Julia Louis-Dreyfus",
+      "recognizability": 10.0,
+      "degree": 3,
+      "ordinal": 65,
+      "x": 305.16710444453577,
+      "y": -573.8231769150998
+    },
+    {
+      "person_id": 1137,
+      "name": "Juliette Binoche",
+      "recognizability": 10.0,
+      "degree": 4,
+      "ordinal": 55,
+      "x": 597.8841541013422,
+      "y": 30.57021875162933
+    },
+    {
+      "person_id": 5292,
+      "name": "Denzel Washington",
+      "recognizability": 10.0,
+      "degree": 4,
+      "ordinal": 77,
+      "x": -599.819065210523,
+      "y": 373.3859785931636
+    },
+    {
+      "person_id": 4483,
+      "name": "Dustin Hoffman",
+      "recognizability": 10.0,
+      "degree": 8,
+      "ordinal": 30,
+      "x": -430.7088907968319,
+      "y": 113.53348135489699
+    },
+    {
+      "person_id": 2963,
+      "name": "Nicolas Cage",
+      "recognizability": 10.0,
+      "degree": 6,
+      "ordinal": 48,
+      "x": -283.1485188770133,
+      "y": 483.1427493585655
+    },
+    {
+      "person_id": 107379,
+      "name": "LeBron James",
+      "recognizability": 10.0,
+      "degree": 5,
+      "ordinal": 33,
+      "x": -368.806856003281,
+      "y": -285.6247590195485
+    },
+    {
+      "person_id": 446511,
+      "name": "Shakira",
+      "recognizability": 10.0,
+      "degree": 1,
+      "ordinal": 53,
+      "x": 21.424152331901503,
+      "y": 587.4870259817314
+    },
+    {
+      "person_id": 65717,
+      "name": "Jon Hamm",
+      "recognizability": 10.0,
+      "degree": 4,
+      "ordinal": 58,
+      "x": 348.4909280876851,
+      "y": 506.1166595169377
+    },
+    {
+      "person_id": 16377,
+      "name": "Jerry Seinfeld",
+      "recognizability": 10.0,
+      "degree": 0,
+      "ordinal": 97,
+      "x": 752.109859743143,
+      "y": 248.05394348235978
+    },
+    {
+      "person_id": 56446,
+      "name": "John Cena",
+      "recognizability": 10.0,
+      "degree": 11,
+      "ordinal": 25,
+      "x": -388.6239249107845,
+      "y": -123.98163165137359
+    },
+    {
+      "person_id": 54812,
+      "name": "Chevy Chase",
+      "recognizability": 10.0,
+      "degree": 4,
+      "ordinal": 57,
+      "x": 84.18787068183535,
+      "y": -603.4172705765543
+    },
+    {
+      "person_id": 85930,
+      "name": "John Mayer",
+      "recognizability": 10.0,
+      "degree": 0,
+      "ordinal": 82,
+      "x": -315.33948303486085,
+      "y": 657.0852383361741
+    },
+    {
+      "person_id": 18973,
+      "name": "Mila Kunis",
+      "recognizability": 10.0,
+      "degree": 8,
+      "ordinal": 56,
+      "x": -465.61345514870925,
+      "y": 384.71302341418215
+    },
+    {
+      "person_id": 6352,
+      "name": "Jane Fonda",
+      "recognizability": 10.0,
+      "degree": 0,
+      "ordinal": 74,
+      "x": -67.30101298280032,
+      "y": 689.5437431022698
+    },
+    {
+      "person_id": 69597,
+      "name": "Drew Barrymore",
+      "recognizability": 10.0,
+      "degree": 8,
+      "ordinal": 34,
+      "x": 471.67042887184004,
+      "y": -39.076930890930015
+    },
+    {
+      "person_id": 71580,
+      "name": "Benedict Cumberbatch",
+      "recognizability": 10.0,
+      "degree": 16,
+      "ordinal": 4,
+      "x": -176.1509033220831,
+      "y": -31.158614520131202
+    },
+    {
+      "person_id": 77948,
+      "name": "Selena Gomez",
+      "recognizability": 10.0,
+      "degree": 16,
+      "ordinal": 2,
+      "x": 12.114063767864499,
+      "y": -138.0335084645323
+    },
+    {
+      "person_id": 1562344,
+      "name": "Cardi B",
+      "recognizability": 10.0,
+      "degree": 1,
+      "ordinal": 80,
+      "x": -673.86942284198,
+      "y": -253.5744485523269
+    },
+    {
+      "person_id": 165899,
+      "name": "Simon Cowell",
+      "recognizability": 10.0,
+      "degree": 1,
+      "ordinal": 83,
+      "x": -212.6024599410681,
+      "y": -701.7123299664945
+    },
+    {
+      "person_id": 1205,
+      "name": "Richard Gere",
+      "recognizability": 10.0,
+      "degree": 4,
+      "ordinal": 60,
+      "x": 543.632105016075,
+      "y": -308.0002181749084
+    }
+  ],
+  "edges": [
+    {
+      "source": 4785,
+      "target": 5469
+    },
+    {
+      "source": 3293,
+      "target": 4483
+    },
+    {
+      "source": 71580,
+      "target": 226001
+    },
+    {
+      "source": 3063,
+      "target": 3392
+    },
+    {
+      "source": 27319,
+      "target": 31903
+    },
+    {
+      "source": 3223,
+      "target": 172069
+    },
+    {
+      "source": 58769,
+      "target": 81200
+    },
+    {
+      "source": 18973,
+      "target": 1136517
+    },
+    {
+      "source": 3063,
+      "target": 77948
+    },
+    {
+      "source": 1532,
+      "target": 1813
+    },
+    {
+      "source": 4587,
+      "target": 38673
+    },
+    {
+      "source": 932967,
+      "target": 1821863
+    },
+    {
+      "source": 58225,
+      "target": 90633
+    },
+    {
+      "source": 77948,
+      "target": 234352
+    },
+    {
+      "source": 86654,
+      "target": 1190668
+    },
+    {
+      "source": 1461,
+      "target": 1892
+    },
+    {
+      "source": 5309,
+      "target": 5469
+    },
+    {
+      "source": 4495,
+      "target": 77948
+    },
+    {
+      "source": 3063,
+      "target": 234352
+    },
+    {
+      "source": 3223,
+      "target": 1136406
+    },
+    {
+      "source": 1136517,
+      "target": 1315036
+    },
+    {
+      "source": 3223,
+      "target": 51329
+    },
+    {
+      "source": 1461,
+      "target": 7499
+    },
+    {
+      "source": 4495,
+      "target": 543261
+    },
+    {
+      "source": 4495,
+      "target": 234352
+    },
+    {
+      "source": 1532,
+      "target": 51329
+    },
+    {
+      "source": 234352,
+      "target": 1315036
+    },
+    {
+      "source": 38673,
+      "target": 505710
+    },
+    {
+      "source": 65717,
+      "target": 90633
+    },
+    {
+      "source": 4491,
+      "target": 27319
+    },
+    {
+      "source": 3223,
+      "target": 56446
+    },
+    {
+      "source": 56446,
+      "target": 77948
+    },
+    {
+      "source": 3063,
+      "target": 86654
+    },
+    {
+      "source": 51329,
+      "target": 172069
+    },
+    {
+      "source": 4690,
+      "target": 505710
+    },
+    {
+      "source": 4495,
+      "target": 81200
+    },
+    {
+      "source": 56446,
+      "target": 234352
+    },
+    {
+      "source": 1283,
+      "target": 5469
+    },
+    {
+      "source": 112,
+      "target": 51329
+    },
+    {
+      "source": 3223,
+      "target": 505710
+    },
+    {
+      "source": 30614,
+      "target": 56446
+    },
+    {
+      "source": 1461,
+      "target": 30614
+    },
+    {
+      "source": 15886,
+      "target": 1136406
+    },
+    {
+      "source": 1532,
+      "target": 1892
+    },
+    {
+      "source": 51329,
+      "target": 1136406
+    },
+    {
+      "source": 18973,
+      "target": 40462
+    },
+    {
+      "source": 1892,
+      "target": 27319
+    },
+    {
+      "source": 3063,
+      "target": 1190668
+    },
+    {
+      "source": 3063,
+      "target": 172069
+    },
+    {
+      "source": 1892,
+      "target": 3223
+    },
+    {
+      "source": 5530,
+      "target": 71580
+    },
+    {
+      "source": 3063,
+      "target": 38673
+    },
+    {
+      "source": 1892,
+      "target": 2176
+    },
+    {
+      "source": 112,
+      "target": 1461
+    },
+    {
+      "source": 1327,
+      "target": 5530
+    },
+    {
+      "source": 77948,
+      "target": 1136406
+    },
+    {
+      "source": 30614,
+      "target": 113461
+    },
+    {
+      "source": 4690,
+      "target": 5292
+    },
+    {
+      "source": 4495,
+      "target": 38673
+    },
+    {
+      "source": 71580,
+      "target": 76594
+    },
+    {
+      "source": 4785,
+      "target": 71580
+    },
+    {
+      "source": 112,
+      "target": 55466
+    },
+    {
+      "source": 1920,
+      "target": 7499
+    },
+    {
+      "source": 58225,
+      "target": 65717
+    },
+    {
+      "source": 3063,
+      "target": 1136406
+    },
+    {
+      "source": 3063,
+      "target": 51329
+    },
+    {
+      "source": 4483,
+      "target": 13565
+    },
+    {
+      "source": 4430,
+      "target": 4690
+    },
+    {
+      "source": 14406,
+      "target": 77948
+    },
+    {
+      "source": 4491,
+      "target": 4785
+    },
+    {
+      "source": 71580,
+      "target": 172069
+    },
+    {
+      "source": 4483,
+      "target": 63522
+    },
+    {
+      "source": 1813,
+      "target": 1892
+    },
+    {
+      "source": 236695,
+      "target": 1315036
+    },
+    {
+      "source": 76594,
+      "target": 226001
+    },
+    {
+      "source": 4495,
+      "target": 51329
+    },
+    {
+      "source": 3223,
+      "target": 4483
+    },
+    {
+      "source": 4587,
+      "target": 5530
+    },
+    {
+      "source": 5469,
+      "target": 58225
+    },
+    {
+      "source": 1892,
+      "target": 63522
+    },
+    {
+      "source": 1283,
+      "target": 5472
+    },
+    {
+      "source": 7499,
+      "target": 37917
+    },
+    {
+      "source": 30614,
+      "target": 932967
+    },
+    {
+      "source": 1532,
+      "target": 4483
+    },
+    {
+      "source": 4495,
+      "target": 58769
+    },
+    {
+      "source": 55466,
+      "target": 1315036
+    },
+    {
+      "source": 5472,
+      "target": 998387
+    },
+    {
+      "source": 15886,
+      "target": 77234
+    },
+    {
+      "source": 71580,
+      "target": 1136406
+    },
+    {
+      "source": 1327,
+      "target": 71580
+    },
+    {
+      "source": 1920,
+      "target": 18973
+    },
+    {
+      "source": 55466,
+      "target": 505710
+    },
+    {
+      "source": 4495,
+      "target": 58225
+    },
+    {
+      "source": 4785,
+      "target": 14406
+    },
+    {
+      "source": 55466,
+      "target": 1136517
+    },
+    {
+      "source": 1327,
+      "target": 54812
+    },
+    {
+      "source": 2176,
+      "target": 3223
+    },
+    {
+      "source": 18973,
+      "target": 90633
+    },
+    {
+      "source": 1205,
+      "target": 16897
+    },
+    {
+      "source": 51329,
+      "target": 932967
+    },
+    {
+      "source": 38673,
+      "target": 107379
+    },
+    {
+      "source": 37917,
+      "target": 58225
+    },
+    {
+      "source": 1137,
+      "target": 5309
+    },
+    {
+      "source": 5469,
+      "target": 5472
+    },
+    {
+      "source": 5469,
+      "target": 77948
+    },
+    {
+      "source": 1461,
+      "target": 5469
+    },
+    {
+      "source": 1813,
+      "target": 5530
+    },
+    {
+      "source": 3063,
+      "target": 3293
+    },
+    {
+      "source": 1532,
+      "target": 54812
+    },
+    {
+      "source": 4724,
+      "target": 30614
+    },
+    {
+      "source": 107379,
+      "target": 505710
+    },
+    {
+      "source": 4785,
+      "target": 226001
+    },
+    {
+      "source": 505710,
+      "target": 1190668
+    },
+    {
+      "source": 3291,
+      "target": 119592
+    },
+    {
+      "source": 71580,
+      "target": 505710
+    },
+    {
+      "source": 3063,
+      "target": 932967
+    },
+    {
+      "source": 56446,
+      "target": 527393
+    },
+    {
+      "source": 3392,
+      "target": 543261
+    },
+    {
+      "source": 1532,
+      "target": 27319
+    },
+    {
+      "source": 1532,
+      "target": 4724
+    },
+    {
+      "source": 112,
+      "target": 1283
+    },
+    {
+      "source": 3063,
+      "target": 5530
+    },
+    {
+      "source": 5469,
+      "target": 81200
+    },
+    {
+      "source": 4495,
+      "target": 18973
+    },
+    {
+      "source": 5374,
+      "target": 77948
+    },
+    {
+      "source": 112,
+      "target": 1813
+    },
+    {
+      "source": 4491,
+      "target": 4495
+    },
+    {
+      "source": 3223,
+      "target": 5469
+    },
+    {
+      "source": 1461,
+      "target": 1532
+    },
+    {
+      "source": 15886,
+      "target": 54812
+    },
+    {
+      "source": 4495,
+      "target": 30614
+    },
+    {
+      "source": 234352,
+      "target": 1136517
+    },
+    {
+      "source": 3063,
+      "target": 31903
+    },
+    {
+      "source": 5309,
+      "target": 55466
+    },
+    {
+      "source": 1532,
+      "target": 5469
+    },
+    {
+      "source": 31903,
+      "target": 1190668
+    },
+    {
+      "source": 3392,
+      "target": 71580
+    },
+    {
+      "source": 3291,
+      "target": 59538
+    },
+    {
+      "source": 1327,
+      "target": 55466
+    },
+    {
+      "source": 40462,
+      "target": 90633
+    },
+    {
+      "source": 3223,
+      "target": 63522
+    },
+    {
+      "source": 58225,
+      "target": 77948
+    },
+    {
+      "source": 1137,
+      "target": 5469
+    },
+    {
+      "source": 4483,
+      "target": 4724
+    },
+    {
+      "source": 4690,
+      "target": 4785
+    },
+    {
+      "source": 4785,
+      "target": 234352
+    },
+    {
+      "source": 4587,
+      "target": 63522
+    },
+    {
+      "source": 2963,
+      "target": 58225
+    },
+    {
+      "source": 1327,
+      "target": 4430
+    },
+    {
+      "source": 5469,
+      "target": 38673
+    },
+    {
+      "source": 40462,
+      "target": 446511
+    },
+    {
+      "source": 5309,
+      "target": 5472
+    },
+    {
+      "source": 4491,
+      "target": 69597
+    },
+    {
+      "source": 27319,
+      "target": 1009740
+    },
+    {
+      "source": 1461,
+      "target": 3063
+    },
+    {
+      "source": 172069,
+      "target": 543261
+    },
+    {
+      "source": 86654,
+      "target": 505710
+    },
+    {
+      "source": 3291,
+      "target": 69597
+    },
+    {
+      "source": 5292,
+      "target": 7499
+    },
+    {
+      "source": 55466,
+      "target": 107379
+    },
+    {
+      "source": 1532,
+      "target": 4785
+    },
+    {
+      "source": 1283,
+      "target": 55466
+    },
+    {
+      "source": 5469,
+      "target": 1136406
+    },
+    {
+      "source": 55466,
+      "target": 217371
+    },
+    {
+      "source": 4430,
+      "target": 4587
+    },
+    {
+      "source": 3063,
+      "target": 27319
+    },
+    {
+      "source": 58225,
+      "target": 81200
+    },
+    {
+      "source": 3063,
+      "target": 3223
+    },
+    {
+      "source": 3063,
+      "target": 107379
+    },
+    {
+      "source": 1532,
+      "target": 4430
+    },
+    {
+      "source": 31903,
+      "target": 165899
+    },
+    {
+      "source": 112,
+      "target": 1892
+    },
+    {
+      "source": 58769,
+      "target": 63522
+    },
+    {
+      "source": 27319,
+      "target": 55466
+    },
+    {
+      "source": 1283,
+      "target": 7499
+    },
+    {
+      "source": 3223,
+      "target": 543261
+    },
+    {
+      "source": 5469,
+      "target": 56446
+    },
+    {
+      "source": 5292,
+      "target": 18973
+    },
+    {
+      "source": 5472,
+      "target": 38673
+    },
+    {
+      "source": 3063,
+      "target": 56446
+    },
+    {
+      "source": 3063,
+      "target": 5469
+    },
+    {
+      "source": 112,
+      "target": 4785
+    },
+    {
+      "source": 1136406,
+      "target": 1315036
+    },
+    {
+      "source": 55466,
+      "target": 63522
+    },
+    {
+      "source": 1813,
+      "target": 212225
+    },
+    {
+      "source": 1461,
+      "target": 4495
+    },
+    {
+      "source": 5292,
+      "target": 30614
+    },
+    {
+      "source": 1327,
+      "target": 5309
+    },
+    {
+      "source": 4690,
+      "target": 86654
+    },
+    {
+      "source": 2176,
+      "target": 4724
+    },
+    {
+      "source": 1532,
+      "target": 3063
+    },
+    {
+      "source": 30614,
+      "target": 543261
+    },
+    {
+      "source": 56446,
+      "target": 1136406
+    },
+    {
+      "source": 3291,
+      "target": 5472
+    },
+    {
+      "source": 56446,
+      "target": 107379
+    },
+    {
+      "source": 30614,
+      "target": 234352
+    },
+    {
+      "source": 112,
+      "target": 932967
+    },
+    {
+      "source": 27319,
+      "target": 234352
+    },
+    {
+      "source": 4587,
+      "target": 40462
+    },
+    {
+      "source": 55466,
+      "target": 212225
+    },
+    {
+      "source": 3223,
+      "target": 71580
+    },
+    {
+      "source": 1205,
+      "target": 1922
+    },
+    {
+      "source": 5374,
+      "target": 58225
+    },
+    {
+      "source": 4495,
+      "target": 63522
+    },
+    {
+      "source": 3392,
+      "target": 4430
+    },
+    {
+      "source": 1922,
+      "target": 3392
+    },
+    {
+      "source": 4690,
+      "target": 1190668
+    },
+    {
+      "source": 1532,
+      "target": 86654
+    },
+    {
+      "source": 3293,
+      "target": 18973
+    },
+    {
+      "source": 3063,
+      "target": 4785
+    },
+    {
+      "source": 4724,
+      "target": 5530
+    },
+    {
+      "source": 1461,
+      "target": 69597
+    },
+    {
+      "source": 51329,
+      "target": 543261
+    },
+    {
+      "source": 1205,
+      "target": 40462
+    },
+    {
+      "source": 2176,
+      "target": 90633
+    },
+    {
+      "source": 236695,
+      "target": 543261
+    },
+    {
+      "source": 112,
+      "target": 3063
+    },
+    {
+      "source": 1892,
+      "target": 543261
+    },
+    {
+      "source": 4495,
+      "target": 4785
+    },
+    {
+      "source": 1461,
+      "target": 58225
+    },
+    {
+      "source": 1892,
+      "target": 1922
+    },
+    {
+      "source": 1532,
+      "target": 4495
+    },
+    {
+      "source": 77948,
+      "target": 543261
+    },
+    {
+      "source": 4690,
+      "target": 51329
+    },
+    {
+      "source": 55466,
+      "target": 234352
+    },
+    {
+      "source": 1532,
+      "target": 1190668
+    },
+    {
+      "source": 7499,
+      "target": 234352
+    },
+    {
+      "source": 1283,
+      "target": 1813
+    },
+    {
+      "source": 19394,
+      "target": 40462
+    },
+    {
+      "source": 112,
+      "target": 71580
+    },
+    {
+      "source": 4690,
+      "target": 69597
+    },
+    {
+      "source": 3063,
+      "target": 543261
+    },
+    {
+      "source": 1137,
+      "target": 4495
+    },
+    {
+      "source": 38673,
+      "target": 58225
+    },
+    {
+      "source": 505710,
+      "target": 1136406
+    },
+    {
+      "source": 51329,
+      "target": 71580
+    },
+    {
+      "source": 27319,
+      "target": 1190668
+    },
+    {
+      "source": 7499,
+      "target": 30614
+    },
+    {
+      "source": 4724,
+      "target": 71580
+    },
+    {
+      "source": 38673,
+      "target": 55466
+    },
+    {
+      "source": 3291,
+      "target": 1190668
+    },
+    {
+      "source": 5374,
+      "target": 932967
+    },
+    {
+      "source": 5309,
+      "target": 1315036
+    },
+    {
+      "source": 1461,
+      "target": 77948
+    },
+    {
+      "source": 1532,
+      "target": 69597
+    },
+    {
+      "source": 77948,
+      "target": 86654
+    },
+    {
+      "source": 3223,
+      "target": 58225
+    },
+    {
+      "source": 30614,
+      "target": 51329
+    },
+    {
+      "source": 71580,
+      "target": 543261
+    },
+    {
+      "source": 1813,
+      "target": 4495
+    },
+    {
+      "source": 1813,
+      "target": 1190668
+    },
+    {
+      "source": 4491,
+      "target": 51329
+    },
+    {
+      "source": 3063,
+      "target": 71580
+    },
+    {
+      "source": 1892,
+      "target": 4495
+    },
+    {
+      "source": 112,
+      "target": 1327
+    },
+    {
+      "source": 1892,
+      "target": 1190668
+    },
+    {
+      "source": 4495,
+      "target": 65717
+    },
+    {
+      "source": 56446,
+      "target": 1821863
+    },
+    {
+      "source": 3291,
+      "target": 51329
+    },
+    {
+      "source": 1461,
+      "target": 1922
+    },
+    {
+      "source": 3063,
+      "target": 19394
+    },
+    {
+      "source": 1922,
+      "target": 38673
+    },
+    {
+      "source": 543261,
+      "target": 1136406
+    },
+    {
+      "source": 3392,
+      "target": 172069
+    },
+    {
+      "source": 1327,
+      "target": 4587
+    },
+    {
+      "source": 5469,
+      "target": 27319
+    },
+    {
+      "source": 3392,
+      "target": 38673
+    },
+    {
+      "source": 77948,
+      "target": 1190668
+    },
+    {
+      "source": 234352,
+      "target": 543261
+    },
+    {
+      "source": 2963,
+      "target": 7499
+    },
+    {
+      "source": 1813,
+      "target": 51329
+    },
+    {
+      "source": 3223,
+      "target": 3392
+    },
+    {
+      "source": 3063,
+      "target": 4495
+    },
+    {
+      "source": 19394,
+      "target": 90633
+    },
+    {
+      "source": 2176,
+      "target": 65717
+    },
+    {
+      "source": 1892,
+      "target": 51329
+    },
+    {
+      "source": 51329,
+      "target": 69597
+    },
+    {
+      "source": 3293,
+      "target": 5469
+    },
+    {
+      "source": 3223,
+      "target": 77948
+    },
+    {
+      "source": 3223,
+      "target": 4587
+    },
+    {
+      "source": 1532,
+      "target": 3392
+    },
+    {
+      "source": 1892,
+      "target": 69597
+    },
+    {
+      "source": 4495,
+      "target": 4724
+    },
+    {
+      "source": 3392,
+      "target": 1136406
+    },
+    {
+      "source": 3392,
+      "target": 51329
+    },
+    {
+      "source": 38673,
+      "target": 81200
+    },
+    {
+      "source": 18973,
+      "target": 38673
+    },
+    {
+      "source": 4587,
+      "target": 5472
+    },
+    {
+      "source": 5472,
+      "target": 71580
+    },
+    {
+      "source": 1532,
+      "target": 77948
+    },
+    {
+      "source": 56446,
+      "target": 1562344
+    },
+    {
+      "source": 51329,
+      "target": 58225
+    },
+    {
+      "source": 1283,
+      "target": 212225
+    },
+    {
+      "source": 112,
+      "target": 212225
+    },
+    {
+      "source": 1532,
+      "target": 4690
+    },
+    {
+      "source": 1137,
+      "target": 5472
+    },
+    {
+      "source": 4430,
+      "target": 4483
+    },
+    {
+      "source": 1813,
+      "target": 55466
+    },
+    {
+      "source": 30614,
+      "target": 77948
+    },
+    {
+      "source": 2963,
+      "target": 932967
+    },
+    {
+      "source": 112,
+      "target": 1532
+    },
+    {
+      "source": 1205,
+      "target": 4587
+    },
+    {
+      "source": 4690,
+      "target": 31903
+    },
+    {
+      "source": 1461,
+      "target": 38673
+    },
+    {
+      "source": 3291,
+      "target": 4587
+    },
+    {
+      "source": 86654,
+      "target": 234352
+    },
+    {
+      "source": 4495,
+      "target": 90633
+    },
+    {
+      "source": 3359,
+      "target": 4483
+    },
+    {
+      "source": 3291,
+      "target": 3293
+    },
+    {
+      "source": 2963,
+      "target": 1821863
+    },
+    {
+      "source": 4495,
+      "target": 37917
+    },
+    {
+      "source": 27319,
+      "target": 932967
+    },
+    {
+      "source": 4430,
+      "target": 40462
+    },
+    {
+      "source": 2963,
+      "target": 3063
+    },
+    {
+      "source": 4587,
+      "target": 5309
+    },
+    {
+      "source": 1461,
+      "target": 3223
+    },
+    {
+      "source": 1461,
+      "target": 51329
+    },
+    {
+      "source": 1532,
+      "target": 31903
+    },
+    {
+      "source": 14406,
+      "target": 47296
+    },
+    {
+      "source": 4430,
+      "target": 54812
+    },
+    {
+      "source": 2176,
+      "target": 69597
+    },
+    {
+      "source": 172069,
+      "target": 1136406
+    },
+    {
+      "source": 2963,
+      "target": 40462
+    },
+    {
+      "source": 3063,
+      "target": 4430
+    }
+  ]
+}
