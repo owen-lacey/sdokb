@@ -2,6 +2,9 @@ export interface Actor {
   person_id: number;
   name: string;
   Recognizability: number;
+  ordinal_100?: number;
+  x_100?: number | null;
+  y_100?: number | null;
 }
 
 export interface Movie {

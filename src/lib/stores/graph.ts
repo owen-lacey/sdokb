@@ -5,7 +5,6 @@ import { getViewportBounds, getViewportCenter, addLoadDelays } from '../utils/cu
 import { viewport } from './viewport';
 import { fetchTopActors, fetchActorConnections } from '../services/graphData';
 import { getCirclePosition } from '../utils/layout';
-import optimizedPermutation from '../data/optimized-permutation-100.json';
 
 // Configuration: Default number of actors to display
 // Change this value to load a different number of actors
@@ -34,17 +33,16 @@ function createGraphStore() {
     update(state => ({ ...state, loading: true, error: null }));
 
     try {
-      // Fetch top N actors by recognizability
+      // Fetch top N actors by ordinal_100
       const actors = await fetchTopActors(count);
 
-      // Convert to Circle format with position calculation
-      // Always use optimized permutation for 100 actors
-      const permutation = count === 100 ? optimizedPermutation.permutation : null;
-
       const circles: Circle[] = actors.map((actor, index) => {
-        // Apply optimized permutation if available, otherwise use default index
-        const positionIndex = permutation ? permutation[index] : index;
-        const position = getCirclePosition(positionIndex);
+        const hasPersisted =
+          typeof actor.x_100 === 'number' && typeof actor.y_100 === 'number';
+        const positionIndex = actor.ordinal_100 ?? index;
+        const position = hasPersisted
+          ? { x: actor.x_100 as number, y: actor.y_100 as number }
+          : getCirclePosition(positionIndex);
 
         return {
           id: actor.person_id,

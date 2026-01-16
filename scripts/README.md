@@ -38,6 +38,17 @@ python3 scripts/analyze-convergence.py 200 20000
 
 Creates convergence plot showing when diminishing returns kick in.
 
+### Gentle Layout Relaxation
+
+**`relax-layout.py`** - Small-step force layout with min distance + recognizability weighting
+
+```bash
+python3 scripts/relax-layout.py
+```
+
+Outputs `actors_relaxed_positions.csv` with original + relaxed coordinates.
+Use `--upsert` to write relaxed positions to Supabase (defaults to `x_100`/`y_100`).
+
 **`compare-algorithms.py`** - Fair comparison of optimization algorithms
 
 ```bash

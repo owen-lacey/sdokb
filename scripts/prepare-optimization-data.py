@@ -9,6 +9,7 @@ loads the precomputed distance matrix, and prepares data for optimization.
 import os
 import json
 import csv
+import math
 from pathlib import Path
 from dotenv import load_dotenv
 from supabase import create_client, Client
@@ -22,6 +23,9 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 ACTORS_CSV = PROJECT_ROOT / 'actors_with_positions.csv'
 DISTANCE_MATRIX = PROJECT_ROOT / 'distance-matrix-100.json'
 OUTPUT_FILE = PROJECT_ROOT / 'optimization-input.json'
+GOLDEN_RATIO = (1 + 5 ** 0.5) / 2
+GOLDEN_ANGLE = 360 * (1 - 1 / GOLDEN_RATIO)
+SPACING = 80
 
 
 def get_supabase_client() -> Client:
@@ -47,15 +51,58 @@ def load_actors_from_csv():
                 break
 
             actors.append({
-                'index': index,
                 'person_id': int(row['person_id']),
                 'name': row['name'],
-                'recognizability': float(row['Recognizability']),
-                'x': float(row['x']),
-                'y': float(row['y'])
+                'recognizability': float(row['Recognizability'])
             })
 
     print(f'Loaded {len(actors)} actors')
+    return actors
+
+
+def calculate_vogel_position(index, spacing=SPACING):
+    """Calculate Vogel spiral position for a given index."""
+    radius = spacing * math.sqrt(index + 1)
+    theta_degrees = index * GOLDEN_ANGLE
+    theta_radians = math.radians(theta_degrees)
+
+    x = radius * math.cos(theta_radians)
+    y = radius * math.sin(theta_radians)
+
+    return x, y
+
+
+def fetch_actor_ordinals(supabase: Client, actor_ids: list):
+    """Fetch ordinal_100 values for actors from Supabase."""
+    print('Fetching ordinal_100 ordering...')
+    response = supabase.table('actors') \
+        .select('person_id, ordinal_100') \
+        .in_('person_id', actor_ids) \
+        .execute()
+
+    if not response.data:
+        print('No ordinal_100 data returned; keeping CSV order.')
+        return {}
+
+    return {row['person_id']: row.get('ordinal_100') for row in response.data}
+
+
+def apply_ordinal_order(actors: list, ordinal_map: dict):
+    """Sort actors by ordinal_100 and assign index + Vogel positions."""
+    for actor in actors:
+        actor['ordinal_100'] = ordinal_map.get(actor['person_id'])
+
+    actors.sort(
+        key=lambda actor: (
+            actor['ordinal_100'] is None,
+            actor['ordinal_100'] if actor['ordinal_100'] is not None else 0
+        )
+    )
+
+    for index, actor in enumerate(actors):
+        actor['index'] = index
+        actor['x'], actor['y'] = calculate_vogel_position(index)
+
     return actors
 
 
@@ -128,14 +175,37 @@ def build_edge_list(actors: list, connections: list):
     return edges
 
 
-def load_distance_matrix():
-    """Load precomputed distance matrix from JSON file."""
-    print(f'Loading distance matrix from {DISTANCE_MATRIX}...')
+def compute_distance_matrix(actors: list):
+    """Compute distance matrix from actor positions."""
+    print('Computing distance matrix from actor positions...')
+    positions = [(actor['x'], actor['y']) for actor in actors]
+    size = len(positions)
+    matrix = [[0.0] * size for _ in range(size)]
 
-    with open(DISTANCE_MATRIX, 'r') as f:
-        matrix = json.load(f)
+    for i in range(size):
+        x1, y1 = positions[i]
+        for j in range(i + 1, size):
+            x2, y2 = positions[j]
+            dist = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+            matrix[i][j] = dist
+            matrix[j][i] = dist
 
-    print(f'Loaded {len(matrix)}x{len(matrix[0])} distance matrix')
+    return matrix
+
+
+def load_distance_matrix(actors: list):
+    """Load precomputed distance matrix or compute from positions if missing."""
+    if DISTANCE_MATRIX.exists():
+        print(f'Loading distance matrix from {DISTANCE_MATRIX}...')
+        with open(DISTANCE_MATRIX, 'r') as f:
+            matrix = json.load(f)
+        print(f'Loaded {len(matrix)}x{len(matrix[0])} distance matrix')
+        return matrix
+
+    matrix = compute_distance_matrix(actors)
+    with open(DISTANCE_MATRIX, 'w') as f:
+        json.dump(matrix, f)
+    print(f'Saved distance matrix to {DISTANCE_MATRIX}')
     return matrix
 
 
@@ -174,15 +244,19 @@ def main():
         # Initialize Supabase client
         supabase = get_supabase_client()
 
-        # Fetch connections
+        # Apply ordinal ordering from Supabase
         actor_ids = [actor['person_id'] for actor in actors]
+        ordinal_map = fetch_actor_ordinals(supabase, actor_ids)
+        actors = apply_ordinal_order(actors, ordinal_map)
+
+        # Fetch connections
         connections = fetch_connections(supabase, actor_ids)
 
         # Build edge list
         edges = build_edge_list(actors, connections)
 
         # Load distance matrix
-        distance_matrix = load_distance_matrix()
+        distance_matrix = load_distance_matrix(actors)
 
         # Verify dimensions
         if len(distance_matrix) != len(actors):

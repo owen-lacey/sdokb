@@ -12,8 +12,9 @@ export async function fetchTopActors(limit: number = 100): Promise<ActorNode[]> 
 
     const { data, error } = await supabase
       .from('actors')
-      .select('person_id, name, Recognizability')
-      .order('Recognizability', { ascending: false })
+      .select('person_id, name, Recognizability, ordinal_100, x_100, y_100')
+      .not('ordinal_100', 'is', null)
+      .order('ordinal_100', { ascending: true })
       .range(start, start + currentPageSize - 1);
 
     if (error) throw error;
