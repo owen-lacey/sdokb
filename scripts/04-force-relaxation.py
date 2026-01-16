@@ -23,21 +23,22 @@ from optimization_utils import (
     append_to_progress,
     print_header,
     print_metrics,
+    generate_position_sql,
     euclidean_distance,
     Metrics,
     OUTPUT_DIR,
 )
 
 # Configuration (tuned to match relax-layout.py)
-MAX_ITERATIONS = 500
+MAX_ITERATIONS = 2000
 STEP_SIZE = 0.02  # Small step multiplier
 MAX_STEP = 5.0  # Cap maximum movement per iteration
-ATTRACTION_STRENGTH = 0.01  # Spring constant for edges
+ATTRACTION_STRENGTH = 0.05  # Spring constant for edges (increased from 0.01)
 REPULSION_STRENGTH = 0.5  # Only applied when overlapping
-ANCHOR_STRENGTH = 0.02  # Keeps nodes near original positions
-MIN_DISTANCE = 60.0  # Minimum distance between nodes
-IMPROVEMENT_THRESHOLD = 0.002  # Stop when improvement drops below this
-PATIENCE = 15  # Stop after this many iterations without improvement
+ANCHOR_STRENGTH = 0.005  # Keeps nodes near original positions (reduced from 0.02)
+MIN_DISTANCE = 160.0  # Minimum distance between nodes
+IMPROVEMENT_THRESHOLD = 0.0002  # Stop when improvement drops below 0.02%
+PATIENCE = 30  # Stop after this many iterations without improvement
 
 
 def build_adjacency(edges: list[tuple[int, int]]) -> dict[int, set[int]]:
@@ -284,8 +285,17 @@ def main():
     print(f'  Converged: {stats["converged"]}')
     print(f'  Time: {stats["elapsed_seconds"]:.2f}s')
 
-    # Save positions CSV
+    # Save positions CSV (for reference)
     save_positions_csv(actors, final_positions)
+
+    # Generate SQL for Supabase update
+    final_ordinals = {a['person_id']: a['ordinal'] for a in actors}
+    generate_position_sql(
+        '04-force-relaxation',
+        actors,
+        final_positions,
+        final_ordinals
+    )
 
     # Save output
     output_data = {
@@ -348,9 +358,10 @@ def main():
         print(f'Improvement vs baseline: {improvement_vs_baseline:.1f}%')
     print()
     print(f'Final positions saved to: {OUTPUT_DIR / "04-final-positions.csv"}')
+    print(f'SQL updates saved to: {OUTPUT_DIR / "04-update-positions.sql"}')
     print()
     print('All optimization steps complete!')
-    print('To upload positions to database, use the CSV file above.')
+    print('Run the SQL file in Supabase to upload positions.')
 
 
 if __name__ == '__main__':

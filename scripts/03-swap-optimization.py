@@ -25,6 +25,7 @@ from optimization_utils import (
     append_to_progress,
     print_header,
     print_metrics,
+    generate_position_sql,
     euclidean_distance,
     Metrics,
 )
@@ -286,6 +287,14 @@ def main():
     }
 
     save_step_output('03-swap-optimization', output_data)
+
+    # Generate SQL for Supabase update
+    generate_position_sql(
+        '03-swap-optimization',
+        actors,
+        final_positions,
+        final_ordinals
+    )
 
     # Append to progress file
     append_to_progress(

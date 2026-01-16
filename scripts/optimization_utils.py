@@ -334,3 +334,48 @@ def print_metrics(metrics: Metrics, label: str = 'Metrics'):
     print('-' * 40)
     print(metrics)
     print('-' * 40)
+
+
+def generate_position_sql(
+    step_name: str,
+    actors: list[dict],
+    positions: dict[int, tuple[float, float]],
+    ordinals: dict[int, int] = None
+) -> str:
+    """
+    Generate SQL UPDATE statements for actor positions.
+
+    Args:
+        step_name: Name for the SQL file comment header
+        actors: List of actor dicts with person_id
+        positions: Dict mapping actor_id to (x, y)
+        ordinals: Optional dict mapping actor_id to ordinal (if None, not updated)
+
+    Returns:
+        Path to the saved SQL file
+    """
+    ensure_output_dir()
+
+    # Create filename from step name (e.g., "01-random-baseline" -> "01-update-positions.sql")
+    step_prefix = step_name.split('-')[0]
+    sql_filename = OUTPUT_DIR / f'{step_prefix}-update-positions.sql'
+
+    lines = [f'-- {step_name} - Position Updates', '-- Run this in Supabase SQL Editor', '']
+
+    for actor in actors:
+        person_id = actor['person_id']
+        x, y = positions[person_id]
+        x = round(x, 2)
+        y = round(y, 2)
+
+        if ordinals and person_id in ordinals:
+            ordinal = ordinals[person_id]
+            lines.append(f'UPDATE public.actors SET x_100 = {x}, y_100 = {y}, ordinal_100 = {ordinal} WHERE person_id = {person_id};')
+        else:
+            lines.append(f'UPDATE public.actors SET x_100 = {x}, y_100 = {y} WHERE person_id = {person_id};')
+
+    with open(sql_filename, 'w') as f:
+        f.write('\n'.join(lines))
+
+    print(f'Saved SQL updates to {sql_filename}')
+    return str(sql_filename)

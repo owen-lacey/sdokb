@@ -23,6 +23,7 @@ from optimization_utils import (
     append_to_progress,
     print_header,
     print_metrics,
+    generate_position_sql,
 )
 
 
@@ -93,6 +94,14 @@ def main():
     }
 
     save_step_output('01-random-baseline', output_data)
+
+    # Generate SQL for Supabase update
+    generate_position_sql(
+        '01-random-baseline',
+        actors,
+        positions,
+        actor_ordinals
+    )
 
     # Append to progress file
     append_to_progress(
