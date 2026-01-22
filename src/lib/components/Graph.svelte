@@ -11,11 +11,14 @@
   let dragStart = $state({ x: 0, y: 0 });
   let hoveredCircleId = $state<number | null>(null);
 
-  // Compute visible edges (draw if at least one circle is visible)
+  // Compute visible edges (only show when a node is hovered, and only edges connected to it)
   let visibleEdges = $derived.by(() => {
+    if (hoveredCircleId === null) return [];
+
     const visibleIds = new Set($visibleCircles.map(c => c.id));
     return $graph.edges.filter(e =>
-      visibleIds.has(e.source) || visibleIds.has(e.target)
+      (e.source === hoveredCircleId || e.target === hoveredCircleId) &&
+      (visibleIds.has(e.source) || visibleIds.has(e.target))
     );
   });
 
@@ -88,11 +91,6 @@
     return connected;
   });
 
-  function isEdgeDimmed(edge: { source: number; target: number }) {
-    return hoveredCircleId !== null
-      && edge.source !== hoveredCircleId
-      && edge.target !== hoveredCircleId;
-  }
 </script>
 
 <div
@@ -127,7 +125,6 @@
             x2={targetPos.x}
             y2={targetPos.y}
             movieTitle={edge.movieTitle}
-            dimmed={isEdgeDimmed(edge)}
           />
         {/if}
       {/each}

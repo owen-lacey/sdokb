@@ -18,21 +18,19 @@ from datetime import datetime
 from collections import defaultdict
 
 from optimization_utils import (
-    calculate_vogel_position,
     calculate_metrics,
     save_step_output,
     load_step_output,
     append_to_progress,
     print_header,
     print_metrics,
-    generate_position_sql,
     euclidean_distance,
     Metrics,
 )
 
 # Configuration
 STAGNATION_THRESHOLD = 1000  # Stop after this many consecutive non-improving swaps
-MAX_ITERATIONS = 50000  # Safety limit
+MAX_ITERATIONS = 200000  # Safety limit
 RANDOM_SEED = 42  # For reproducibility
 
 
@@ -287,14 +285,6 @@ def main():
     }
 
     save_step_output('03-swap-optimization', output_data)
-
-    # Generate SQL for Supabase update
-    generate_position_sql(
-        '03-swap-optimization',
-        actors,
-        final_positions,
-        final_ordinals
-    )
 
     # Append to progress file
     append_to_progress(

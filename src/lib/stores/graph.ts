@@ -6,10 +6,6 @@ import { viewport } from './viewport';
 import { fetchTopActors, fetchActorConnections } from '../services/graphData';
 import { getCirclePosition } from '../utils/layout';
 
-// Configuration: Default number of actors to display
-// Change this value to load a different number of actors
-const DEFAULT_ACTOR_COUNT = 100;
-
 interface GraphState {
   allCircles: Circle[];
   edges: GraphEdge[];
@@ -100,7 +96,7 @@ function createGraphStore() {
   }
 
   // Initialize on store creation
-  loadActors(DEFAULT_ACTOR_COUNT);
+  loadActors(parseInt(import.meta.env.VITE_GRAPH_LIMIT));
 
   return {
     subscribe

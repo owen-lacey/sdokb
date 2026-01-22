@@ -23,7 +23,6 @@ from optimization_utils import (
     append_to_progress,
     print_header,
     print_metrics,
-    generate_position_sql,
 )
 
 
@@ -36,8 +35,8 @@ def main():
     # Initialize Supabase client
     supabase = get_supabase_client()
 
-    # Fetch top 100 actors
-    actors = fetch_top_actors(supabase, limit=100)
+    # Fetch top actors (uses VITE_GRAPH_LIMIT from .env)
+    actors = fetch_top_actors(supabase, int(os.getenv('VITE_GRAPH_LIMIT', '100')))
 
     # Create actor ID set and list
     actor_ids = [a['person_id'] for a in actors]
@@ -94,14 +93,6 @@ def main():
     }
 
     save_step_output('01-random-baseline', output_data)
-
-    # Generate SQL for Supabase update
-    generate_position_sql(
-        '01-random-baseline',
-        actors,
-        positions,
-        actor_ordinals
-    )
 
     # Append to progress file
     append_to_progress(

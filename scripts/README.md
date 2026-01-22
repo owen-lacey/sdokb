@@ -1,85 +1,93 @@
 # Actor Layout Optimization Scripts
 
-## Main Optimizer (Single Source of Truth)
+A 4-step pipeline to optimize actor positions in a graph visualization by minimizing edge distances.
 
-**`optimize-layout.py`** - Production optimizer using Greedy + 2-Opt algorithm
+## Prerequisites
 
+Install dependencies:
 ```bash
-# Optimize 100 actors (~9 seconds)
-python3 scripts/optimize-layout.py 100
-
-# Optimize 500 actors (~60 seconds)
-python3 scripts/optimize-layout.py 500
-
-# Optimize 1,000 actors (~5 minutes)
-python3 scripts/optimize-layout.py 1000
+uv pip install python-dotenv supabase
 ```
 
-**Output**: `optimization_outputs/optimized_{N}_actors.json`
-
-## Supporting Scripts
-
-### Data Preparation
-**`prepare-optimization-data.py`** - Fetch actors and connections from Supabase
-
-```bash
-python3 scripts/prepare-optimization-data.py
+Set environment variables in `.env`:
+```
+VITE_SUPABASE_URL=<your-supabase-url>
+VITE_SUPABASE_ANON_KEY=<your-supabase-key>
+VITE_GRAPH_LIMIT=100  # Number of actors to optimize
 ```
 
-Creates `optimization-input.json` with 100 actors (used by comparison script).
+## Pipeline Overview
 
-### Analysis Scripts
+Run the scripts in order. Each step builds on the previous:
 
-**`analyze-convergence.py`** - Plot convergence curves to tune iteration counts
+| Step | Script | Description |
+|------|--------|-------------|
+| 1 | `01-random-baseline.py` | Establish baseline with random positions |
+| 2 | `02-centrality-ordering.py` | Place highly-connected actors in center |
+| 3 | `03-swap-optimization.py` | 2-opt swaps to reduce edge distances |
+| 4 | `04-force-relaxation.py` | Force-directed fine-tuning |
 
-```bash
-python3 scripts/analyze-convergence.py 200 20000
-```
-
-Creates convergence plot showing when diminishing returns kick in.
-
-### Gentle Layout Relaxation
-
-**`relax-layout.py`** - Small-step force layout with min distance + recognizability weighting
+## Usage
 
 ```bash
-python3 scripts/relax-layout.py
+# Run the full pipeline
+python scripts/01-random-baseline.py
+python scripts/02-centrality-ordering.py
+python scripts/03-swap-optimization.py
+python scripts/04-force-relaxation.py
 ```
 
-Outputs `actors_relaxed_positions.csv` with original + relaxed coordinates.
-Use `--upsert` to write relaxed positions to Supabase (defaults to `x_100`/`y_100`).
+Each step:
+- Reads from the previous step's output in `optimization_outputs/`
+- Saves results to `optimization_outputs/{step-name}.json`
+- Appends metrics to `OPTIMIZATION_PROGRESS.md`
 
-**`compare-algorithms.py`** - Fair comparison of optimization algorithms
+## Script Details
 
-```bash
-python3 scripts/compare-algorithms.py
+### Step 1: Random Baseline
+Fetches actors from Supabase, assigns random ordinal positions on a Vogel spiral, and calculates baseline edge distance metrics.
+
+**Output:** `optimization_outputs/01-random-baseline.json`
+
+### Step 2: Centrality Ordering
+Sorts actors by degree (connection count) and assigns center positions to highly-connected actors.
+
+**Output:** `optimization_outputs/02-centrality-ordering.json`
+
+### Step 3: Swap Optimization
+Iteratively swaps pairs of actors if it reduces total edge distance. Stops after 1000 consecutive non-improving attempts.
+
+**Output:** `optimization_outputs/03-swap-optimization.json`
+
+### Step 4: Force-Directed Relaxation
+Applies physics simulation with attraction (edges as springs) and repulsion (minimum distance enforcement) to fine-tune positions.
+
+**Outputs:**
+- `optimization_outputs/04-force-relaxation.json`
+- `optimization_outputs/04-final-positions.csv`
+- `optimization_outputs/graph-data-{N}.json` (frontend-ready)
+
+## Shared Utilities
+
+`optimization_utils.py` provides:
+- Supabase client initialization
+- Vogel spiral position calculation
+- Distance and metrics calculation
+- File I/O for step outputs
+- Progress tracking
+
+## Output Files
+
+After running the full pipeline:
+
+```
+optimization_outputs/
+├── 01-random-baseline.json      # Step 1 results
+├── 02-centrality-ordering.json  # Step 2 results
+├── 03-swap-optimization.json    # Step 3 results
+├── 04-force-relaxation.json     # Step 4 results
+├── 04-final-positions.csv       # Final positions for DB upload
+└── graph-data-{N}.json          # Frontend-ready graph data
 ```
 
-Compares Greedy+2Opt vs Simulated Annealing on identical data.
-
-### Legacy Analysis (JavaScript)
-
-- `analyze-connected-distances.js` - Original distance analysis
-- `analyze-shuffled-distances.js` - Random shuffle baseline testing
-
-These were used to establish the baseline metrics in `distance-analysis-report.md`.
-
-## Quick Start
-
-```bash
-# 1. Optimize 200 actors
-python3 scripts/optimize-layout.py 200
-
-# 2. Results saved to:
-cat optimization_outputs/optimized_200_actors.json
-```
-
-## Algorithm Performance
-
-| Actors | Edges | Time | Improvement |
-|--------|-------|------|-------------|
-| 100 | 309 | 9s | 51% |
-| 200 | 1,375 | 13s | 42% |
-| 500 | 5,862 | 59s | 39% |
-
-See `../OPTIMIZATION_GUIDE.md` for detailed documentation.
+The `graph-data-{N}.json` file can be uploaded to Supabase Storage for the frontend to consume.

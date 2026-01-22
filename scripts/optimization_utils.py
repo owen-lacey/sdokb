@@ -33,6 +33,9 @@ GOLDEN_RATIO = (1 + 5 ** 0.5) / 2
 GOLDEN_ANGLE = 360 * (1 - 1 / GOLDEN_RATIO)  # ~137.5 degrees
 DEFAULT_SPACING = 80
 
+# Get graph limit from environment (default to 200 if not set)
+DEFAULT_GRAPH_LIMIT = int(os.getenv('VITE_GRAPH_LIMIT'))
+
 
 @dataclass
 class Metrics:
@@ -99,12 +102,18 @@ def euclidean_distance(x1: float, y1: float, x2: float, y2: float) -> float:
     return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
 
-def fetch_top_actors(supabase: Client, limit: int = 100) -> list[dict]:
+def fetch_top_actors(supabase: Client, limit: Optional[int] = None) -> list[dict]:
     """
     Fetch top actors ordered by Recognizability.
 
+    Args:
+        limit: Number of actors to fetch (defaults to VITE_GRAPH_LIMIT from .env)
+
     Returns list of dicts with: person_id, name, Recognizability
     """
+    if limit is None:
+        limit = DEFAULT_GRAPH_LIMIT
+
     print(f'Fetching top {limit} actors...')
 
     response = supabase.table('actors') \
@@ -336,46 +345,50 @@ def print_metrics(metrics: Metrics, label: str = 'Metrics'):
     print('-' * 40)
 
 
-def generate_position_sql(
-    step_name: str,
+def generate_graph_json(
     actors: list[dict],
+    edges: list[tuple[int, int]],
     positions: dict[int, tuple[float, float]],
-    ordinals: dict[int, int] = None
+    ordinals: dict[int, int]
 ) -> str:
     """
-    Generate SQL UPDATE statements for actor positions.
+    Generate frontend-ready JSON for the graph visualization.
 
     Args:
-        step_name: Name for the SQL file comment header
-        actors: List of actor dicts with person_id
+        actors: List of actor dicts with person_id, name, recognizability
+        edges: List of (source_id, target_id) tuples
         positions: Dict mapping actor_id to (x, y)
-        ordinals: Optional dict mapping actor_id to ordinal (if None, not updated)
+        ordinals: Dict mapping actor_id to ordinal
 
     Returns:
-        Path to the saved SQL file
+        Path to the saved JSON file
     """
     ensure_output_dir()
 
-    # Create filename from step name (e.g., "01-random-baseline" -> "01-update-positions.sql")
-    step_prefix = step_name.split('-')[0]
-    sql_filename = OUTPUT_DIR / f'{step_prefix}-update-positions.sql'
+    actor_count = len(actors)
+    json_filename = OUTPUT_DIR / f'graph-data-{actor_count}.json'
 
-    lines = [f'-- {step_name} - Position Updates', '-- Run this in Supabase SQL Editor', '']
+    data = {
+        'generated': datetime.now().isoformat(),
+        'actors': [
+            {
+                'person_id': actor['person_id'],
+                'name': actor['name'],
+                'recognizability': actor.get('recognizability') or actor.get('Recognizability'),
+                'ordinal': ordinals[actor['person_id']],
+                'x': round(positions[actor['person_id']][0], 2),
+                'y': round(positions[actor['person_id']][1], 2),
+            }
+            for actor in actors
+        ],
+        'edges': [
+            {'source': source, 'target': target}
+            for source, target in edges
+        ],
+    }
 
-    for actor in actors:
-        person_id = actor['person_id']
-        x, y = positions[person_id]
-        x = round(x, 2)
-        y = round(y, 2)
+    with open(json_filename, 'w') as f:
+        json.dump(data, f, indent=2)
 
-        if ordinals and person_id in ordinals:
-            ordinal = ordinals[person_id]
-            lines.append(f'UPDATE public.actors SET x_100 = {x}, y_100 = {y}, ordinal_100 = {ordinal} WHERE person_id = {person_id};')
-        else:
-            lines.append(f'UPDATE public.actors SET x_100 = {x}, y_100 = {y} WHERE person_id = {person_id};')
-
-    with open(sql_filename, 'w') as f:
-        f.write('\n'.join(lines))
-
-    print(f'Saved SQL updates to {sql_filename}')
-    return str(sql_filename)
+    print(f'Saved graph data to {json_filename}')
+    return str(json_filename)

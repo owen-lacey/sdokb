@@ -23,7 +23,7 @@ from optimization_utils import (
     append_to_progress,
     print_header,
     print_metrics,
-    generate_position_sql,
+    generate_graph_json,
     euclidean_distance,
     Metrics,
     OUTPUT_DIR,
@@ -34,7 +34,7 @@ MAX_ITERATIONS = 2000
 STEP_SIZE = 0.02  # Small step multiplier
 MAX_STEP = 5.0  # Cap maximum movement per iteration
 ATTRACTION_STRENGTH = 0.05  # Spring constant for edges (increased from 0.01)
-REPULSION_STRENGTH = 0.5  # Only applied when overlapping
+REPULSION_STRENGTH = 5000.0  # Strong inverse-distance repulsion (acts like soft constraint)
 ANCHOR_STRENGTH = 0.005  # Keeps nodes near original positions (reduced from 0.02)
 MIN_DISTANCE = 160.0  # Minimum distance between nodes
 IMPROVEMENT_THRESHOLD = 0.0002  # Stop when improvement drops below 0.02%
@@ -87,6 +87,7 @@ def run_force_relaxation(
 
     # Build adjacency list
     adjacency = build_adjacency(edges)
+    max_degree = max(len(v) for v in adjacency.values()) if adjacency else 1
 
     start_time = time.time()
     prev_obj = calculate_objective(positions, edges)
@@ -122,10 +123,9 @@ def run_force_relaxation(
             forces[target][0] -= fx
             forces[target][1] -= fy
 
-        # Repulsion only when nodes overlap (dist < MIN_DISTANCE)
+        # Strong repulsion when nodes are close (inverse-distance squared = soft barrier)
         for i, actor_i in enumerate(actor_ids):
             x_i, y_i = positions[actor_i]
-
             for actor_j in actor_ids[i + 1:]:
                 x_j, y_j = positions[actor_j]
 
@@ -133,17 +133,14 @@ def run_force_relaxation(
                 dy = y_j - y_i
                 dist = math.hypot(dx, dy)
 
-                if dist == 0:
-                    direction_x, direction_y = 1.0, 0.0
-                    dist = 1e-6
-                else:
+                if dist < MIN_DISTANCE:
+                    if dist < 1:
+                        dist = 1  # Prevent division by zero
                     direction_x = dx / dist
                     direction_y = dy / dist
 
-                # Only repel if overlapping
-                if dist < MIN_DISTANCE:
-                    overlap = MIN_DISTANCE - dist
-                    magnitude = REPULSION_STRENGTH * overlap
+                    # Inverse-distance squared repulsion (very strong at close range)
+                    magnitude = REPULSION_STRENGTH / (dist * dist)
 
                     fx = direction_x * magnitude
                     fy = direction_y * magnitude
@@ -154,9 +151,15 @@ def run_force_relaxation(
                     forces[actor_j][1] += fy
 
         # Anchor force to keep near original positions
+        # Weaker for low-degree nodes so they can be pulled toward their connections
         for aid in actor_ids:
-            forces[aid][0] += ANCHOR_STRENGTH * (original_positions[aid][0] - positions[aid][0])
-            forces[aid][1] += ANCHOR_STRENGTH * (original_positions[aid][1] - positions[aid][1])
+            degree = len(adjacency.get(aid, set()))
+            degree_ratio = degree / max_degree  # 0 to 1
+            # Low degree = 10% anchor, high degree = 100% anchor
+            actor_anchor = ANCHOR_STRENGTH * (0.1 + 0.9 * degree_ratio)
+
+            forces[aid][0] += actor_anchor * (original_positions[aid][0] - positions[aid][0])
+            forces[aid][1] += actor_anchor * (original_positions[aid][1] - positions[aid][1])
 
         # Apply small, capped steps
         max_step_actual = 0.0
@@ -175,6 +178,7 @@ def run_force_relaxation(
             positions[aid][0] += step_x
             positions[aid][1] += step_y
             max_step_actual = max(max_step_actual, step_mag)
+
 
         # Check convergence
         current_obj = calculate_objective(positions, edges)
@@ -288,11 +292,11 @@ def main():
     # Save positions CSV (for reference)
     save_positions_csv(actors, final_positions)
 
-    # Generate SQL for Supabase update
+    # Generate JSON for frontend
     final_ordinals = {a['person_id']: a['ordinal'] for a in actors}
-    generate_position_sql(
-        '04-force-relaxation',
+    generate_graph_json(
         actors,
+        edges,
         final_positions,
         final_ordinals
     )
@@ -308,6 +312,7 @@ def main():
             'max_step': MAX_STEP,
             'attraction_strength': ATTRACTION_STRENGTH,
             'repulsion_strength': REPULSION_STRENGTH,
+            'repulsion_mode': 'inverse_distance_squared_with_swap',
             'anchor_strength': ANCHOR_STRENGTH,
             'min_distance': MIN_DISTANCE,
             'improvement_threshold': IMPROVEMENT_THRESHOLD,
@@ -358,10 +363,10 @@ def main():
         print(f'Improvement vs baseline: {improvement_vs_baseline:.1f}%')
     print()
     print(f'Final positions saved to: {OUTPUT_DIR / "04-final-positions.csv"}')
-    print(f'SQL updates saved to: {OUTPUT_DIR / "04-update-positions.sql"}')
+    print(f'Graph data saved to: {OUTPUT_DIR / f"graph-data-{len(actors)}.json"}')
     print()
     print('All optimization steps complete!')
-    print('Run the SQL file in Supabase to upload positions.')
+    print(f'Upload graph-data-{len(actors)}.json to Supabase Storage.')
 
 
 if __name__ == '__main__':

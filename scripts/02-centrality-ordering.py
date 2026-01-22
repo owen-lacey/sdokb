@@ -12,6 +12,7 @@ Usage:
 
 from collections import defaultdict
 from datetime import datetime
+import os
 
 from optimization_utils import (
     get_supabase_client,
@@ -25,7 +26,6 @@ from optimization_utils import (
     append_to_progress,
     print_header,
     print_metrics,
-    generate_position_sql,
     Metrics,
 )
 
@@ -70,13 +70,13 @@ def main():
     # Initialize Supabase client
     supabase = get_supabase_client()
 
-    # Fetch top 100 actors
-    actors = fetch_top_actors(supabase, limit=100)
+    # Fetch top actors using VITE_GRAPH_LIMIT from environment
+    actors = fetch_top_actors(supabase, limit=int(os.getenv('VITE_GRAPH_LIMIT')))
 
     # Create actor ID set and list
     actor_ids = [a['person_id'] for a in actors]
     actor_id_set = set(actor_ids)
-
+  
     # Fetch and deduplicate connections
     connections = fetch_connections(supabase, actor_ids)
     edges = deduplicate_edges(connections, actor_id_set)
@@ -142,14 +142,6 @@ def main():
     }
 
     save_step_output('02-centrality-ordering', output_data)
-
-    # Generate SQL for Supabase update
-    generate_position_sql(
-        '02-centrality-ordering',
-        actors,
-        positions,
-        actor_ordinals
-    )
 
     # Append to progress file
     append_to_progress(

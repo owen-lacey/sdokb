@@ -1,71 +1,96 @@
-import { supabase } from '../supabase/client';
-import type { Actor, ActorConnection, ActorNode } from '../types/database';
+import type { ActorConnection, ActorNode } from '../types/database';
 
-export async function fetchTopActors(limit: number = 100): Promise<ActorNode[]> {
-  const allActors: Actor[] = [];
-  const pageSize = 1000;
-  let remainingLimit = limit;
-  let start = 0;
+interface GraphDataJson {
+  generated: string;
+  actors: {
+    person_id: number;
+    name: string;
+    recognizability: number;
+    ordinal: number;
+    x: number;
+    y: number;
+  }[];
+  edges: {
+    source: number;
+    target: number;
+  }[];
+}
 
-  while (remainingLimit > 0) {
-    const currentPageSize = Math.min(pageSize, remainingLimit);
+// Cache the data in memory (one fetch per session)
+let cachedData: GraphDataJson | null = null;
 
-    const { data, error } = await supabase
-      .from('actors')
-      .select('person_id, name, Recognizability, ordinal_100, x_100, y_100')
-      .not('ordinal_100', 'is', null)
-      .order('ordinal_100', { ascending: true })
-      .range(start, start + currentPageSize - 1);
-
-    if (error) throw error;
-
-    if (data && data.length > 0) {
-      allActors.push(...data);
-      start += data.length;
-      remainingLimit -= data.length;
-
-      // If we got less than requested, we've reached the end
-      if (data.length < currentPageSize) {
-        break;
-      }
-    } else {
-      break;
-    }
+async function fetchGraphData(): Promise<GraphDataJson> {
+  if (cachedData) {
+    return cachedData;
   }
 
-  return allActors.map(actor => ({
-    ...actor,
-    radius: calculateRadius(actor.Recognizability)
+  const dataUrl = import.meta.env.VITE_DATA_BASE_URL;
+  if (!dataUrl) {
+    throw new Error('VITE_DATA_BASE_URL environment variable is not set');
+  }
+  const graphLimit = import.meta.env.VITE_GRAPH_LIMIT;
+  if (!graphLimit) {
+    throw new Error('VITE_GRAPH_LIMIT environment variable is not set');
+  }
+
+  const response = await fetch(`${dataUrl}/graph-data-${graphLimit}.json`);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch graph data: ${response.statusText}`);
+  }
+
+  cachedData = await response.json();
+  return cachedData!;
+}
+
+export async function fetchTopActors(limit: number): Promise<ActorNode[]> {
+  const data = await fetchGraphData();
+
+  // Sort by ordinal and take the first `limit` actors
+  const sortedActors = [...data.actors]
+    .sort((a, b) => a.ordinal - b.ordinal)
+    .slice(0, limit);
+
+  return sortedActors.map(actor => ({
+    person_id: actor.person_id,
+    name: actor.name,
+    Recognizability: actor.recognizability,
+    ordinal_100: actor.ordinal,
+    x_100: actor.x,
+    y_100: actor.y,
+    radius: calculateRadius(actor.recognizability)
   }));
 }
 
 export async function fetchActorConnections(actorIds: number[]): Promise<ActorConnection[]> {
   if (actorIds.length === 0) return [];
 
-  const allConnections: ActorConnection[] = [];
-  const pageSize = 1000;
-  let start = 0;
-  let hasMore = true;
+  const data = await fetchGraphData();
+  const actorIdSet = new Set(actorIds);
 
-  while (hasMore) {
-    const { data, error } = await supabase
-      .from('actor_connections')
-      .select('id, Source, Target, movie_id, movie_title, release_date')
-      .or('Source.in.(' + actorIds.join(',') + '),Target.in.(' + actorIds.join(',') + ')')
-      .range(start, start + pageSize - 1);
+  // Filter edges to only include those between the specified actors
+  // and deduplicate by creating a unique key for each edge
+  const seenEdges = new Set<string>();
+  const connections: ActorConnection[] = [];
 
-    if (error) throw error;
-
-    if (data && data.length > 0) {
-      allConnections.push(...data);
-      hasMore = data.length === pageSize;
-      start += pageSize;
-    } else {
-      hasMore = false;
+  for (const edge of data.edges) {
+    if (actorIdSet.has(edge.source) && actorIdSet.has(edge.target)) {
+      // Create a unique key for the edge (sorted to handle bidirectional)
+      const key = [edge.source, edge.target].sort((a, b) => a - b).join('-');
+      if (!seenEdges.has(key)) {
+        seenEdges.add(key);
+        connections.push({
+          id: connections.length,
+          Source: edge.source,
+          Target: edge.target,
+          movie_id: 0,
+          movie_title: '',
+          release_date: null
+        });
+      }
     }
   }
 
-  return allConnections;
+  return connections;
 }
 
 function calculateRadius(recognizability: number): number {
