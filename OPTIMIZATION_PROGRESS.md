@@ -452,3 +452,138 @@ Iterations: 9,762 | Swaps accepted: 156 | Time: 0.06s
 - Swaps accepted: 2,712
 - Time: 2.70s
 - Stopped: stagnation
+
+### Step 1: Random Baseline
+*Timestamp: 2026-02-07 21:33:29*
+
+- Edge count: 17974
+- Total distance: 41,543,679.12
+- Avg distance: 2311.32
+- Min distance: 133.88
+- Max distance: 5025.12
+
+- Random seed: 42
+- Description: Baseline with randomly shuffled ordinal positions
+
+### Step 1: Random Baseline
+*Timestamp: 2026-02-07 21:40:17*
+
+- Edge count: 42155
+- Total distance: 138,767,542.71
+- Avg distance: 3291.84
+- Min distance: 134.10
+- Max distance: 7117.12
+
+- Random seed: 42
+- Description: Baseline with randomly shuffled ordinal positions
+
+### Step 2: Centrality Ordering
+*Timestamp: 2026-02-07 21:40:53*
+
+- Edge count: 42359
+- Total distance: 93,548,610.02
+- Avg distance: 2208.47
+- Min distance: 128.16
+- Max distance: 7037.57
+- **vs baseline: ↓32.9%**
+
+- Ordering: By degree (connection count), descending
+- Top actor: Samuel L. Jackson (295 connections)
+
+### Step 3: Swap Optimization
+*Timestamp: 2026-02-07 21:42:21*
+
+- Edge count: 42359
+- Total distance: 71,684,057.17
+- Avg distance: 1692.30
+- Min distance: 128.16
+- Max distance: 6242.96
+- **vs previous step: ↓23.4%**
+- **vs baseline: ↓48.6%**
+
+- Iterations: 3,511,759
+- Swaps accepted: 11,854
+- Time: 80.78s
+- Stopped: stagnation
+
+### Step 1: Random Baseline
+*Timestamp: 2026-02-07 21:50:40*
+
+- Edge count: 111781
+- Total distance: 569,443,984.62
+- Avg distance: 5094.28
+- Min distance: 134.10
+- Max distance: 11255.73
+
+- Random seed: 42
+- Description: Baseline with randomly shuffled ordinal positions
+
+### Step 2: Centrality Ordering
+*Timestamp: 2026-02-07 21:51:29*
+
+- Edge count: 111985
+- Total distance: 372,713,648.33
+- Avg distance: 3328.25
+- Min distance: 128.16
+- Max distance: 11227.48
+- **vs baseline: ↓34.7%**
+
+- Ordering: By degree (connection count), descending
+- Top actor: Samuel L. Jackson (473 connections)
+
+### Step 3: Swap Optimization
+*Timestamp: 2026-02-07 21:55:14*
+
+- Edge count: 111985
+- Total distance: 267,716,448.87
+- Avg distance: 2390.65
+- Min distance: 133.43
+- Max distance: 10555.37
+- **vs previous step: ↓28.2%**
+- **vs baseline: ↓53.1%**
+
+- Iterations: 8,857,916
+- Swaps accepted: 31,491
+- Time: 219.53s
+- Stopped: stagnation
+
+### Step 1: Random Baseline
+*Timestamp: 2026-02-07 22:05:53*
+
+- Edge count: 367741
+- Total distance: 3,764,865,379.89
+- Avg distance: 10237.82
+- Min distance: 134.15
+- Max distance: 22609.86
+
+- Random seed: 42
+- Description: Baseline with randomly shuffled ordinal positions
+
+### Step 2: Centrality Ordering
+*Timestamp: 2026-02-07 22:07:17*
+
+- Edge count: 367945
+- Total distance: 2,523,898,534.20
+- Avg distance: 6859.45
+- Min distance: 128.16
+- Max distance: 22530.07
+- **vs baseline: ↓33.0%**
+
+- Ordering: By degree (connection count), descending
+- Top actor: Samuel L. Jackson (862 connections)
+
+### Step 3: Swap Optimization
+*Timestamp: 2026-02-07 22:13:12*
+
+- Edge count: 367945
+- Total distance: 1,582,818,727.01
+- Avg distance: 4301.78
+- Min distance: 128.16
+- Max distance: 21596.46
+- **vs previous step: ↓37.3%**
+- **vs baseline: ↓58.0%**
+
+- Iterations: 15,000,000
+- Swaps accepted: 97,630
+- Time: 348.33s
+- Stopped: max_iterations

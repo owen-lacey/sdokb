@@ -116,17 +116,37 @@ def fetch_top_actors(supabase: Client, limit: Optional[int] = None) -> list[dict
 
     print(f'Fetching top {limit} actors...')
 
-    response = supabase.table('actors') \
-        .select('person_id, name, Recognizability') \
-        .order('Recognizability', desc=True) \
-        .limit(limit) \
-        .execute()
+    all_actors = []
+    page_size = 1000
+    start = 0
 
-    if not response.data:
+    while len(all_actors) < limit:
+        remaining = limit - len(all_actors)
+        fetch_count = min(page_size, remaining)
+
+        response = supabase.table('actors') \
+            .select('person_id, name, Recognizability') \
+            .order('Recognizability', desc=True) \
+            .range(start, start + fetch_count - 1) \
+            .execute()
+
+        if not response.data:
+            break
+
+        all_actors.extend(response.data)
+        print(f'\rFetched {len(all_actors)} actors...', end='', flush=True)
+
+        if len(response.data) < fetch_count:
+            break
+        start += fetch_count
+
+    print()
+
+    if not all_actors:
         raise ValueError('No actors returned from database')
 
-    # Filter out any with null Recognizability (shouldn't happen with order, but safe)
-    actors = [a for a in response.data if a.get('Recognizability') is not None]
+    # Filter out any with null Recognizability
+    actors = [a for a in all_actors if a.get('Recognizability') is not None]
 
     print(f'Fetched {len(actors)} actors')
     return actors
@@ -142,26 +162,29 @@ def fetch_connections(supabase: Client, actor_ids: list[int]) -> list[dict]:
 
     all_connections = []
     page_size = 1000
-    start = 0
+    id_chunk_size = 500  # Keep filter URL within Supabase limits
 
-    actor_ids_str = ','.join(map(str, actor_ids))
+    for chunk_start in range(0, len(actor_ids), id_chunk_size):
+        chunk = actor_ids[chunk_start:chunk_start + id_chunk_size]
+        actor_ids_str = ','.join(map(str, chunk))
+        start = 0
 
-    while True:
-        response = supabase.table('actor_connections') \
-            .select('Source, Target') \
-            .or_(f'Source.in.({actor_ids_str}),Target.in.({actor_ids_str})') \
-            .range(start, start + page_size - 1) \
-            .execute()
+        while True:
+            response = supabase.table('actor_connections') \
+                .select('Source, Target') \
+                .or_(f'Source.in.({actor_ids_str}),Target.in.({actor_ids_str})') \
+                .range(start, start + page_size - 1) \
+                .execute()
 
-        if response.data and len(response.data) > 0:
-            all_connections.extend(response.data)
-            print(f'\rFetched {len(all_connections)} connections...', end='', flush=True)
+            if response.data and len(response.data) > 0:
+                all_connections.extend(response.data)
+                print(f'\rFetched {len(all_connections)} connections...', end='', flush=True)
 
-            if len(response.data) < page_size:
+                if len(response.data) < page_size:
+                    break
+                start += page_size
+            else:
                 break
-            start += page_size
-        else:
-            break
 
     print()
     return all_connections
