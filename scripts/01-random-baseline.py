@@ -9,6 +9,7 @@ Usage:
     python scripts/01-random-baseline.py
 """
 
+import os
 import random
 from datetime import datetime
 

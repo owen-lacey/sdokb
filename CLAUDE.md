@@ -29,7 +29,6 @@ Run sequentially — each step reads the previous step's output from `optimizati
 python scripts/01-random-baseline.py
 python scripts/02-centrality-ordering.py
 python scripts/03-swap-optimization.py
-python scripts/04-force-relaxation.py
 ```
 
 ## Architecture
@@ -53,12 +52,11 @@ Quadtree spatial index → viewport culling → SVG render
 
 ### Python Pipeline (`scripts/`)
 
-4-step optimization minimizing total edge distance on the Vogel spiral:
+3-step optimization minimizing total edge distance on the Vogel spiral:
 
 1. **Random baseline** — fetch actors from Supabase, assign random ordinals
 2. **Centrality ordering** — sort by degree, place high-degree actors at center
 3. **Swap optimization** — 2-opt swaps with delta recalculation (1000 non-improving attempts → stop)
-4. **Force relaxation** — spring attraction + overlap repulsion physics sim
 
 Shared utilities in `optimization_utils.py`. Each step appends metrics to `OPTIMIZATION_PROGRESS.md`.
 

@@ -25,12 +25,13 @@ from optimization_utils import (
     print_header,
     print_metrics,
     euclidean_distance,
+    generate_graph_json,
     Metrics,
 )
 
 # Configuration
-STAGNATION_THRESHOLD = 1000  # Stop after this many consecutive non-improving swaps
-MAX_ITERATIONS = 200000  # Safety limit
+STAGNATION_THRESHOLD = 10000  # Stop after this many consecutive non-improving swaps
+MAX_ITERATIONS = 15000000  # Safety limit (~5 min at typical throughput)
 RANDOM_SEED = 42  # For reproducibility
 
 
@@ -286,6 +287,9 @@ def main():
 
     save_step_output('03-swap-optimization', output_data)
 
+    # Generate frontend-ready graph JSON
+    generate_graph_json(actors, edges, final_positions, final_ordinals)
+
     # Append to progress file
     append_to_progress(
         'Step 3: Swap Optimization',
@@ -307,8 +311,6 @@ def main():
     print(f'Improvement vs Step 2: {improvement_vs_previous:.1f}%')
     if baseline_metrics:
         print(f'Improvement vs baseline: {improvement_vs_baseline:.1f}%')
-    print()
-    print('Run Step 4 next: python scripts/04-force-relaxation.py')
 
 
 if __name__ == '__main__':

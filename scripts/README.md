@@ -1,6 +1,6 @@
 # Actor Layout Optimization Scripts
 
-A 4-step pipeline to optimize actor positions in a graph visualization by minimizing edge distances.
+A 3-step pipeline to optimize actor positions in a graph visualization by minimizing edge distances.
 
 ## Prerequisites
 
@@ -25,7 +25,6 @@ Run the scripts in order. Each step builds on the previous:
 | 1 | `01-random-baseline.py` | Establish baseline with random positions |
 | 2 | `02-centrality-ordering.py` | Place highly-connected actors in center |
 | 3 | `03-swap-optimization.py` | 2-opt swaps to reduce edge distances |
-| 4 | `04-force-relaxation.py` | Force-directed fine-tuning |
 
 ## Usage
 
@@ -34,7 +33,6 @@ Run the scripts in order. Each step builds on the previous:
 python scripts/01-random-baseline.py
 python scripts/02-centrality-ordering.py
 python scripts/03-swap-optimization.py
-python scripts/04-force-relaxation.py
 ```
 
 Each step:
@@ -57,14 +55,8 @@ Sorts actors by degree (connection count) and assigns center positions to highly
 ### Step 3: Swap Optimization
 Iteratively swaps pairs of actors if it reduces total edge distance. Stops after 1000 consecutive non-improving attempts.
 
-**Output:** `optimization_outputs/03-swap-optimization.json`
-
-### Step 4: Force-Directed Relaxation
-Applies physics simulation with attraction (edges as springs) and repulsion (minimum distance enforcement) to fine-tune positions.
-
 **Outputs:**
-- `optimization_outputs/04-force-relaxation.json`
-- `optimization_outputs/04-final-positions.csv`
+- `optimization_outputs/03-swap-optimization.json`
 - `optimization_outputs/graph-data-{N}.json` (frontend-ready)
 
 ## Shared Utilities
@@ -85,8 +77,6 @@ optimization_outputs/
 ├── 01-random-baseline.json      # Step 1 results
 ├── 02-centrality-ordering.json  # Step 2 results
 ├── 03-swap-optimization.json    # Step 3 results
-├── 04-force-relaxation.json     # Step 4 results
-├── 04-final-positions.csv       # Final positions for DB upload
 └── graph-data-{N}.json          # Frontend-ready graph data
 ```
 

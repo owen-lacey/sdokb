@@ -1,1605 +1,1605 @@
 {
-  "generated": "2026-01-22T16:27:12.730018",
+  "generated": "2026-01-22T22:03:57.652418",
   "actors": [
     {
       "person_id": 7499,
       "name": "Jared Leto",
       "recognizability": 10.0,
       "ordinal": 66,
-      "x": 115.06,
-      "y": 215.13
+      "x": 48.86,
+      "y": 80.29
     },
     {
       "person_id": 5530,
       "name": "James McAvoy",
       "recognizability": 10.0,
       "ordinal": 85,
-      "x": -252.16,
-      "y": 93.72
+      "x": -87.16,
+      "y": 51.68
     },
     {
       "person_id": 5472,
       "name": "Colin Firth",
       "recognizability": 10.0,
       "ordinal": 46,
-      "x": -245.21,
-      "y": -145.54
+      "x": -98.52,
+      "y": -63.63
     },
     {
       "person_id": 5469,
       "name": "Ralph Fiennes",
       "recognizability": 10.0,
       "ordinal": 20,
-      "x": -83.86,
-      "y": -84.99
+      "x": -29.39,
+      "y": -12.55
     },
     {
       "person_id": 90633,
       "name": "Gal Gadot",
       "recognizability": 10.0,
       "ordinal": 83,
-      "x": 12.75,
-      "y": -220.65
+      "x": 30.85,
+      "y": -80.71
     },
     {
       "person_id": 5374,
       "name": "Jim Parsons",
       "recognizability": 10.0,
       "ordinal": 116,
-      "x": -70.93,
-      "y": 352.19
+      "x": -18.97,
+      "y": 144.6
     },
     {
       "person_id": 4430,
       "name": "Sharon Stone",
       "recognizability": 10.0,
       "ordinal": 55,
-      "x": 229.0,
-      "y": 17.35
+      "x": 94.77,
+      "y": 28.63
     },
     {
       "person_id": 112,
       "name": "Cate Blanchett",
       "recognizability": 10.0,
       "ordinal": 38,
-      "x": -148.26,
-      "y": 40.1
+      "x": -53.56,
+      "y": 23.03
     },
     {
       "person_id": 1190668,
       "name": "Timoth\u00e9e Chalamet",
       "recognizability": 10.0,
       "ordinal": 29,
-      "x": 147.16,
-      "y": 98.84
+      "x": 58.22,
+      "y": 50.13
     },
     {
       "person_id": 63522,
       "name": "Sof\u00eda Vergara",
       "recognizability": 10.0,
       "ordinal": 127,
-      "x": -293.15,
-      "y": 42.88
+      "x": -102.06,
+      "y": 31.94
     },
     {
       "person_id": 4491,
       "name": "Jennifer Aniston",
       "recognizability": 10.0,
       "ordinal": 113,
-      "x": 141.17,
-      "y": 280.04
+      "x": 65.55,
+      "y": 120.24
     },
     {
       "person_id": 58225,
       "name": "Zach Galifianakis",
       "recognizability": 10.0,
       "ordinal": 56,
-      "x": -111.1,
-      "y": 156.51
+      "x": -29.82,
+      "y": 67.37
     },
     {
       "person_id": 4690,
       "name": "Christopher Walken",
       "recognizability": 10.0,
       "ordinal": 21,
-      "x": 190.13,
-      "y": 8.77
+      "x": 91.17,
+      "y": 0.31
     },
     {
       "person_id": 172069,
       "name": "Chadwick Boseman",
       "recognizability": 10.0,
       "ordinal": 57,
-      "x": 53.87,
-      "y": -249.31
+      "x": 7.92,
+      "y": -79.19
     },
     {
       "person_id": 4724,
       "name": "Kevin Bacon",
       "recognizability": 10.0,
       "ordinal": 43,
-      "x": -77.59,
-      "y": 111.94
+      "x": -18.79,
+      "y": 54.45
     },
     {
       "person_id": 40462,
       "name": "Kristen Bell",
       "recognizability": 10.0,
       "ordinal": 104,
-      "x": -55.8,
-      "y": -304.7
+      "x": 2.07,
+      "y": -109.79
     },
     {
       "person_id": 1327,
       "name": "Ian McKellen",
       "recognizability": 10.0,
       "ordinal": 80,
-      "x": -161.65,
-      "y": -28.23
+      "x": -52.07,
+      "y": 3.17
     },
     {
       "person_id": 37917,
       "name": "Kristen Stewart",
       "recognizability": 10.0,
       "ordinal": 103,
-      "x": -161.08,
-      "y": 277.78
+      "x": -37.99,
+      "y": 125.17
     },
     {
       "person_id": 505710,
       "name": "Zendaya",
       "recognizability": 10.0,
       "ordinal": 70,
-      "x": -5.5,
-      "y": -294.56
+      "x": -10.8,
+      "y": -93.29
     },
     {
       "person_id": 1136517,
       "name": "Sia",
       "recognizability": 10.0,
       "ordinal": 154,
-      "x": 137.95,
-      "y": -425.92
+      "x": 28.27,
+      "y": -158.76
     },
     {
       "person_id": 932967,
       "name": "Mahershala Ali",
       "recognizability": 10.0,
       "ordinal": 95,
-      "x": -88.07,
-      "y": 281.57
+      "x": -9.96,
+      "y": 121.23
     },
     {
       "person_id": 85138,
       "name": "Demi Lovato",
       "recognizability": 10.0,
       "ordinal": 171,
-      "x": -266.01,
-      "y": 710.42
+      "x": -176.71,
+      "y": 447.23
     },
     {
       "person_id": 1283,
       "name": "Helena Bonham Carter",
       "recognizability": 10.0,
       "ordinal": 33,
-      "x": -184.02,
-      "y": -70.27
+      "x": -68.8,
+      "y": -2.91
     },
     {
       "person_id": 1920,
       "name": "Winona Ryder",
       "recognizability": 10.0,
       "ordinal": 78,
-      "x": 149.54,
-      "y": -184.3
+      "x": 69.93,
+      "y": -51.18
     },
     {
       "person_id": 119592,
       "name": "Aubrey Plaza",
       "recognizability": 10.0,
       "ordinal": 145,
-      "x": -236.49,
-      "y": 313.5
+      "x": -73.71,
+      "y": 153.78
     },
     {
       "person_id": 1315036,
       "name": "Daisy Ridley",
       "recognizability": 10.0,
       "ordinal": 120,
-      "x": 139.98,
-      "y": -293.96
+      "x": 22.95,
+      "y": -114.7
     },
     {
       "person_id": 31903,
       "name": "Henry Winkler",
       "recognizability": 10.0,
       "ordinal": 118,
-      "x": 359.76,
-      "y": 24.22
+      "x": 159.34,
+      "y": 14.22
     },
     {
       "person_id": 81200,
       "name": "Conan O'Brien",
       "recognizability": 10.0,
       "ordinal": 148,
-      "x": -386.52,
-      "y": -64.87
+      "x": -142.03,
+      "y": -12.13
     },
     {
       "person_id": 16897,
       "name": "Sidney Poitier",
       "recognizability": 10.0,
       "ordinal": 146,
-      "x": 81.01,
-      "y": -522.83
+      "x": 60.43,
+      "y": -218.6
     },
     {
       "person_id": 76594,
       "name": "Miley Cyrus",
       "recognizability": 10.0,
       "ordinal": 119,
-      "x": -339.84,
-      "y": 113.19
+      "x": -126.95,
+      "y": 66.57
     },
     {
       "person_id": 58769,
       "name": "Stephen Colbert",
       "recognizability": 10.0,
       "ordinal": 161,
-      "x": -452.77,
-      "y": -0.59
+      "x": -168.75,
+      "y": 10.14
     },
     {
       "person_id": 19394,
       "name": "Idina Menzel",
       "recognizability": 10.0,
       "ordinal": 172,
-      "x": -147.12,
-      "y": -404.57
+      "x": 1.59,
+      "y": -147.28
     },
     {
       "person_id": 212225,
       "name": "Kim Kardashian",
       "recognizability": 10.0,
       "ordinal": 140,
-      "x": -400.58,
-      "y": 58.95
+      "x": -147.15,
+      "y": 30.68
     },
     {
       "person_id": 998387,
       "name": "Ed Sheeran",
       "recognizability": 10.0,
       "ordinal": 185,
-      "x": -446.39,
-      "y": -677.46
+      "x": -306.14,
+      "y": -429.42
     },
     {
       "person_id": 1009740,
       "name": "Pitbull",
       "recognizability": 10.0,
       "ordinal": 199,
-      "x": 718.55,
-      "y": 107.8
+      "x": 356.69,
+      "y": 51.31
     },
     {
       "person_id": 1223786,
       "name": "Emilia Clarke",
       "recognizability": 10.0,
       "ordinal": 178,
-      "x": 609.44,
-      "y": 3.11
+      "x": 297.48,
+      "y": 37.39
     },
     {
       "person_id": 113461,
       "name": "John Legend",
       "recognizability": 10.0,
       "ordinal": 153,
-      "x": -499.6,
-      "y": 218.4
+      "x": -209.98,
+      "y": 105.72
     },
     {
       "person_id": 236695,
       "name": "John Boyega",
       "recognizability": 10.0,
       "ordinal": 162,
-      "x": 300.22,
-      "y": -276.77
+      "x": 81.53,
+      "y": -132.35
     },
     {
       "person_id": 1821863,
       "name": "Post Malone",
       "recognizability": 10.0,
       "ordinal": 129,
-      "x": -46.2,
-      "y": 432.32
+      "x": 29.15,
+      "y": 192.29
     },
     {
       "person_id": 226001,
       "name": "Ariana Grande",
       "recognizability": 10.0,
       "ordinal": 98,
-      "x": -387.1,
-      "y": 165.37
+      "x": -156.76,
+      "y": 61.99
     },
     {
       "person_id": 527393,
       "name": "Dylan O'Brien",
       "recognizability": 10.0,
       "ordinal": 189,
-      "x": 201.74,
-      "y": 593.42
+      "x": 104.56,
+      "y": 277.73
     },
     {
       "person_id": 13565,
       "name": "Steve McQueen",
       "recognizability": 10.0,
       "ordinal": 187,
-      "x": -710.44,
-      "y": 357.28
+      "x": -431.88,
+      "y": 257.89
     },
     {
       "person_id": 10215,
       "name": "Paul McCartney",
       "recognizability": 10.0,
       "ordinal": 177,
-      "x": -834.76,
-      "y": -669.35
+      "x": -831.45,
+      "y": -668.99
     },
     {
       "person_id": 77234,
       "name": "Priyanka Chopra Jonas",
       "recognizability": 10.0,
       "ordinal": 175,
-      "x": 345.59,
-      "y": -517.78
+      "x": 184.16,
+      "y": -245.56
     },
     {
       "person_id": 1493224,
       "name": "Ruth Bader Ginsburg",
       "recognizability": 10.0,
       "ordinal": 188,
-      "x": 402.32,
-      "y": -1025.06
+      "x": 402.4,
+      "y": -1023.64
     },
     {
       "person_id": 31136,
       "name": "Chris Brown",
       "recognizability": 10.0,
       "ordinal": 167,
-      "x": 169.49,
-      "y": -683.93
+      "x": 106.57,
+      "y": -430.91
     },
     {
       "person_id": 87773,
       "name": "Aishwarya Rai Bachchan",
       "recognizability": 10.0,
       "ordinal": 149,
-      "x": 645.27,
-      "y": -346.34
+      "x": 437.48,
+      "y": -228.94
     },
     {
       "person_id": 3223,
       "name": "Robert Downey Jr.",
       "recognizability": 10.0,
       "ordinal": 10,
-      "x": -21.85,
-      "y": -96.01
+      "x": 4.55,
+      "y": -15.39
     },
     {
       "person_id": 2176,
       "name": "Tommy Lee Jones",
       "recognizability": 10.0,
       "ordinal": 73,
-      "x": 148.18,
-      "y": -115.78
+      "x": 72.29,
+      "y": -22.11
     },
     {
       "person_id": 3291,
       "name": "Hugh Grant",
       "recognizability": 10.0,
       "ordinal": 111,
-      "x": -269.56,
-      "y": 171.87
+      "x": -102.09,
+      "y": 84.62
     },
     {
       "person_id": 3293,
       "name": "Rachel Weisz",
       "recognizability": 10.0,
       "ordinal": 93,
-      "x": -267.82,
-      "y": -35.11
+      "x": -77.95,
+      "y": 22.21
     },
     {
       "person_id": 3392,
       "name": "Michael Douglas",
       "recognizability": 10.0,
       "ordinal": 65,
-      "x": 80.4,
-      "y": -169.31
+      "x": 9.48,
+      "y": -54.18
     },
     {
       "person_id": 86654,
       "name": "Austin Butler",
       "recognizability": 10.0,
       "ordinal": 97,
-      "x": 330.56,
-      "y": 82.1
+      "x": 128.4,
+      "y": 16.99
     },
     {
       "person_id": 543261,
       "name": "Karen Gillan",
       "recognizability": 10.0,
       "ordinal": 26,
-      "x": 68.17,
-      "y": -64.58
+      "x": 35.72,
+      "y": -14.19
     },
     {
       "person_id": 234352,
       "name": "Margot Robbie",
       "recognizability": 10.0,
       "ordinal": 37,
-      "x": 131.54,
-      "y": 63.69
+      "x": 60.28,
+      "y": 31.65
     },
     {
       "person_id": 1136406,
       "name": "Tom Holland",
       "recognizability": 10.0,
       "ordinal": 44,
-      "x": 47.68,
-      "y": -189.99
+      "x": 25.96,
+      "y": -59.11
     },
     {
       "person_id": 1892,
       "name": "Matt Damon",
       "recognizability": 10.0,
       "ordinal": 3,
-      "x": 52.5,
-      "y": 42.43
+      "x": 28.98,
+      "y": 29.95
     },
     {
       "person_id": 4587,
       "name": "Halle Berry",
       "recognizability": 10.0,
       "ordinal": 67,
-      "x": -181.44,
-      "y": -112.09
+      "x": -59.54,
+      "y": -27.88
     },
     {
       "person_id": 4495,
       "name": "Steve Carell",
       "recognizability": 10.0,
       "ordinal": 4,
-      "x": -80.63,
-      "y": 26.09
+      "x": -20.17,
+      "y": 21.32
     },
     {
       "person_id": 1922,
       "name": "Catherine Zeta-Jones",
       "recognizability": 10.0,
       "ordinal": 81,
-      "x": 240.91,
-      "y": -89.71
+      "x": 98.36,
+      "y": -20.94
     },
     {
       "person_id": 3063,
       "name": "Tilda Swinton",
       "recognizability": 10.0,
       "ordinal": 5,
-      "x": 15.29,
-      "y": -35.01
+      "x": 15.9,
+      "y": -3.13
     },
     {
       "person_id": 4785,
       "name": "Jeff Goldblum",
       "recognizability": 10.0,
       "ordinal": 28,
-      "x": 10.58,
-      "y": 15.85
+      "x": 11.52,
+      "y": 18.15
     },
     {
       "person_id": 14406,
       "name": "Lisa Kudrow",
       "recognizability": 10.0,
       "ordinal": 137,
-      "x": -154.09,
-      "y": 354.24
+      "x": -64.51,
+      "y": 130.45
     },
     {
       "person_id": 47296,
       "name": "Jeffrey Dean Morgan",
       "recognizability": 10.0,
       "ordinal": 124,
-      "x": -272.46,
-      "y": 238.18
+      "x": -94.33,
+      "y": 107.61
     },
     {
       "person_id": 1619,
       "name": "Chow Yun-Fat",
       "recognizability": 10.0,
       "ordinal": 164,
-      "x": -645.96,
-      "y": -777.14
+      "x": -639.53,
+      "y": -800.55
     },
     {
       "person_id": 30614,
       "name": "Ryan Gosling",
       "recognizability": 10.0,
       "ordinal": 32,
-      "x": -33.86,
-      "y": 229.56
+      "x": -10.42,
+      "y": 100.27
     },
     {
       "person_id": 8261,
       "name": "Willie Nelson",
       "recognizability": 10.0,
       "ordinal": 184,
-      "x": -215.03,
-      "y": 1068.55
+      "x": -215.6,
+      "y": 1066.64
     },
     {
       "person_id": 51329,
       "name": "Bradley Cooper",
       "recognizability": 10.0,
       "ordinal": 6,
-      "x": -3.81,
-      "y": 90.56
+      "x": 5.45,
+      "y": 47.26
     },
     {
       "person_id": 55466,
       "name": "James Corden",
       "recognizability": 10.0,
       "ordinal": 72,
-      "x": -230.72,
-      "y": -65.15
+      "x": -93.33,
+      "y": -12.94
     },
     {
       "person_id": 51962,
       "name": "Bill Cosby",
       "recognizability": 10.0,
       "ordinal": 191,
-      "x": 840.45,
-      "y": -132.63
+      "x": 536.06,
+      "y": -87.7
     },
     {
       "person_id": 27319,
       "name": "Christoph Waltz",
       "recognizability": 10.0,
       "ordinal": 92,
-      "x": 239.23,
-      "y": 146.15
+      "x": 111.59,
+      "y": 50.92
     },
     {
       "person_id": 38673,
       "name": "Channing Tatum",
       "recognizability": 10.0,
       "ordinal": 54,
-      "x": -134.78,
-      "y": -129.7
+      "x": -41.62,
+      "y": -35.77
     },
     {
       "person_id": 1461,
       "name": "George Clooney",
       "recognizability": 10.0,
       "ordinal": 11,
-      "x": 62.22,
-      "y": 94.45
+      "x": 33.37,
+      "y": 49.33
     },
     {
       "person_id": 59538,
       "name": "David Beckham",
       "recognizability": 10.0,
       "ordinal": 166,
-      "x": -644.01,
-      "y": 488.3
+      "x": -434.95,
+      "y": 311.78
     },
     {
       "person_id": 1532,
       "name": "Bill Murray",
       "recognizability": 10.0,
       "ordinal": 13,
-      "x": 88.9,
-      "y": 22.97
+      "x": 41.89,
+      "y": 18.7
     },
     {
       "person_id": 217371,
       "name": "Adam Levine",
       "recognizability": 10.0,
       "ordinal": 195,
-      "x": -824.33,
-      "y": 54.07
+      "x": -528.98,
+      "y": 27.64
     },
     {
       "person_id": 1813,
       "name": "Anne Hathaway",
       "recognizability": 10.0,
       "ordinal": 64,
-      "x": -199.03,
-      "y": 63.21
+      "x": -68.21,
+      "y": 41.01
     },
     {
       "person_id": 968660,
       "name": "Nicki Minaj",
       "recognizability": 10.0,
       "ordinal": 193,
-      "x": -214.75,
-      "y": -1095.84
+      "x": -212.72,
+      "y": -1093.9
     },
     {
       "person_id": 3359,
       "name": "Laurence Olivier",
       "recognizability": 10.0,
       "ordinal": 192,
-      "x": -321.34,
-      "y": 569.29
+      "x": -135.77,
+      "y": 271.78
     },
     {
       "person_id": 5309,
       "name": "Judi Dench",
       "recognizability": 10.0,
       "ordinal": 101,
-      "x": -290.55,
-      "y": -116.03
+      "x": -88.02,
+      "y": -45.11
     },
     {
       "person_id": 15886,
       "name": "Julia Louis-Dreyfus",
       "recognizability": 10.0,
       "ordinal": 141,
-      "x": 281.78,
-      "y": -391.45
+      "x": 136.84,
+      "y": -141.55
     },
     {
       "person_id": 1137,
       "name": "Juliette Binoche",
       "recognizability": 10.0,
       "ordinal": 135,
-      "x": -386.15,
-      "y": -144.83
+      "x": -137.97,
+      "y": -46.22
     },
     {
       "person_id": 5292,
       "name": "Denzel Washington",
       "recognizability": 10.0,
       "ordinal": 53,
-      "x": 38.72,
-      "y": 207.53
+      "x": 12.94,
+      "y": 95.98
     },
     {
       "person_id": 4483,
       "name": "Dustin Hoffman",
       "recognizability": 10.0,
       "ordinal": 48,
-      "x": -108.83,
-      "y": 209.68
+      "x": -37.06,
+      "y": 98.76
     },
     {
       "person_id": 2963,
       "name": "Nicolas Cage",
       "recognizability": 10.0,
       "ordinal": 61,
-      "x": -14.96,
-      "y": 161.33
+      "x": -1.36,
+      "y": 63.98
     },
     {
       "person_id": 107379,
       "name": "LeBron James",
       "recognizability": 10.0,
       "ordinal": 130,
-      "x": -255.22,
-      "y": -313.92
+      "x": -91.18,
+      "y": -102.7
     },
     {
       "person_id": 446511,
       "name": "Shakira",
       "recognizability": 10.0,
       "ordinal": 159,
-      "x": -64.05,
-      "y": -563.08
+      "x": -20.26,
+      "y": -249.94
     },
     {
       "person_id": 65717,
       "name": "Jon Hamm",
       "recognizability": 10.0,
       "ordinal": 94,
-      "x": 205.38,
-      "y": -131.07
+      "x": 87.59,
+      "y": -37.97
     },
     {
       "person_id": 16377,
       "name": "Jerry Seinfeld",
       "recognizability": 10.0,
       "ordinal": 173,
-      "x": 512.5,
-      "y": 344.61
+      "x": 173.89,
+      "y": 158.69
     },
     {
       "person_id": 56446,
       "name": "John Cena",
       "recognizability": 10.0,
       "ordinal": 58,
-      "x": 99.78,
-      "y": 146.05
+      "x": 55.79,
+      "y": 94.29
     },
     {
       "person_id": 54812,
       "name": "Chevy Chase",
       "recognizability": 10.0,
       "ordinal": 123,
-      "x": 364.77,
-      "y": -52.67
+      "x": 153.63,
+      "y": -15.46
     },
     {
       "person_id": 85930,
       "name": "John Mayer",
       "recognizability": 10.0,
       "ordinal": 197,
-      "x": 37.63,
-      "y": 866.98
+      "x": 28.81,
+      "y": 575.12
     },
     {
       "person_id": 18973,
       "name": "Mila Kunis",
       "recognizability": 10.0,
       "ordinal": 96,
-      "x": -100.51,
-      "y": -259.85
+      "x": -26.4,
+      "y": -79.54
     },
     {
       "person_id": 6352,
       "name": "Jane Fonda",
       "recognizability": 10.0,
       "ordinal": 165,
-      "x": 495.84,
-      "y": 83.53
+      "x": 202.23,
+      "y": 54.51
     },
     {
       "person_id": 69597,
       "name": "Drew Barrymore",
       "recognizability": 10.0,
       "ordinal": 79,
-      "x": 132.06,
-      "y": 178.75
+      "x": 61.63,
+      "y": 69.58
     },
     {
       "person_id": 71580,
       "name": "Benedict Cumberbatch",
       "recognizability": 10.0,
       "ordinal": 12,
-      "x": -125.39,
-      "y": -82.23
+      "x": -44.89,
+      "y": -15.84
     },
     {
       "person_id": 77948,
       "name": "Selena Gomez",
       "recognizability": 10.0,
       "ordinal": 24,
-      "x": 61.75,
-      "y": 152.74
+      "x": 17.17,
+      "y": 77.29
     },
     {
       "person_id": 1562344,
       "name": "Cardi B",
       "recognizability": 10.0,
       "ordinal": 139,
-      "x": 416.46,
-      "y": 332.95
+      "x": 231.09,
+      "y": 164.17
     },
     {
       "person_id": 165899,
       "name": "Simon Cowell",
       "recognizability": 10.0,
       "ordinal": 170,
-      "x": 771.33,
-      "y": -262.6
+      "x": 515.08,
+      "y": -154.72
     },
     {
       "person_id": 1205,
       "name": "Richard Gere",
       "recognizability": 10.0,
       "ordinal": 112,
-      "x": 69.76,
-      "y": -310.51
+      "x": 47.9,
+      "y": -111.77
     },
     {
       "person_id": 1204,
       "name": "Julia Roberts",
       "recognizability": 10.0,
       "ordinal": 40,
-      "x": -47.28,
-      "y": 152.87
+      "x": -3.75,
+      "y": 82.32
     },
     {
       "person_id": 1052109,
       "name": "Harry Styles",
       "recognizability": 10.0,
       "ordinal": 169,
-      "x": -537.51,
-      "y": -154.53
+      "x": -242.2,
+      "y": -49.91
     },
     {
       "person_id": 1230,
       "name": "John Goodman",
       "recognizability": 10.0,
       "ordinal": 69,
-      "x": -62.73,
-      "y": 200.36
+      "x": -22.6,
+      "y": 84.87
     },
     {
       "person_id": 1356210,
       "name": "Millie Bobby Brown",
       "recognizability": 10.0,
       "ordinal": 198,
-      "x": -798.34,
-      "y": -825.31
+      "x": -780.72,
+      "y": -820.73
     },
     {
       "person_id": 1231,
       "name": "Julianne Moore",
       "recognizability": 10.0,
       "ordinal": 30,
-      "x": -151.25,
-      "y": 83.39
+      "x": -46.79,
+      "y": 41.03
     },
     {
       "person_id": 31309,
       "name": "Hugh Hefner",
       "recognizability": 10.0,
       "ordinal": 190,
-      "x": -724.56,
-      "y": -321.45
+      "x": -462.95,
+      "y": -208.84
     },
     {
       "person_id": 1700685,
       "name": "Lewis Pullman",
       "recognizability": 10.0,
       "ordinal": 128,
-      "x": 225.53,
-      "y": -297.57
+      "x": 105.87,
+      "y": -103.13
     },
     {
       "person_id": 19492,
       "name": "Viola Davis",
       "recognizability": 10.0,
       "ordinal": 16,
-      "x": 134.34,
-      "y": 23.9
+      "x": 57.63,
+      "y": 15.58
     },
     {
       "person_id": 2628,
       "name": "Kiefer Sutherland",
       "recognizability": 10.0,
       "ordinal": 77,
-      "x": -199.27,
-      "y": 134.44
+      "x": -73.4,
+      "y": 70.98
     },
     {
       "person_id": 3037,
       "name": "Richard Dreyfuss",
       "recognizability": 10.0,
       "ordinal": 131,
-      "x": 406.29,
-      "y": 144.18
+      "x": 163.98,
+      "y": 76.26
     },
     {
       "person_id": 3036,
       "name": "John Cusack",
       "recognizability": 10.0,
       "ordinal": 110,
-      "x": 294.0,
-      "y": 155.6
+      "x": 123.4,
+      "y": 73.3
     },
     {
       "person_id": 1245,
       "name": "Scarlett Johansson",
       "recognizability": 10.0,
       "ordinal": 7,
-      "x": -37.64,
-      "y": -61.81
+      "x": -14.07,
+      "y": -2.49
     },
     {
       "person_id": 60017,
       "name": "Faith Hill",
       "recognizability": 10.0,
       "ordinal": 196,
-      "x": 554.85,
-      "y": -542.0
+      "x": 362.77,
+      "y": -338.67
     },
     {
       "person_id": 3092,
       "name": "Diane Keaton",
       "recognizability": 10.0,
       "ordinal": 107,
-      "x": 282.69,
-      "y": -147.33
+      "x": 120.05,
+      "y": -38.93
     },
     {
       "person_id": 1959397,
       "name": "Dua Lipa",
       "recognizability": 10.0,
       "ordinal": 181,
-      "x": 318.16,
-      "y": 405.35
+      "x": 131.18,
+      "y": 175.58
     },
     {
       "person_id": 57755,
       "name": "Woody Harrelson",
       "recognizability": 10.0,
       "ordinal": 39,
-      "x": 125.47,
-      "y": -55.75
+      "x": 73.97,
+      "y": -4.97
     },
     {
       "person_id": 212208,
       "name": "Taylor Swift",
       "recognizability": 10.0,
       "ordinal": 90,
-      "x": -201.8,
-      "y": 179.3
+      "x": -54.4,
+      "y": 75.88
     },
     {
       "person_id": 1748,
       "name": "William Shatner",
       "recognizability": 10.0,
       "ordinal": 87,
-      "x": 73.92,
-      "y": 249.0
+      "x": 32.97,
+      "y": 94.56
     },
     {
       "person_id": 1749,
       "name": "Leonard Nimoy",
       "recognizability": 10.0,
       "ordinal": 133,
-      "x": 122.32,
-      "y": -352.1
+      "x": 72.71,
+      "y": -103.31
     },
     {
       "person_id": 969218,
       "name": "Bruno Mars",
       "recognizability": 10.0,
       "ordinal": 174,
-      "x": -750.72,
-      "y": 194.22
+      "x": -475.2,
+      "y": 130.34
     },
     {
       "person_id": 10583,
       "name": "Gisele B\u00fcndchen",
       "recognizability": 10.0,
       "ordinal": 132,
-      "x": -372.01,
-      "y": 286.17
+      "x": -147.9,
+      "y": 111.77
     },
     {
       "person_id": 33684,
       "name": "Bono",
       "recognizability": 10.0,
       "ordinal": 143,
-      "x": -407.35,
-      "y": -358.53
+      "x": -169.59,
+      "y": -122.07
     },
     {
       "person_id": 3894,
       "name": "Christian Bale",
       "recognizability": 10.0,
       "ordinal": 0,
-      "x": 40.6,
-      "y": -6.01
+      "x": 23.77,
+      "y": 9.88
     },
     {
       "person_id": 3895,
       "name": "Michael Caine",
       "recognizability": 10.0,
       "ordinal": 17,
-      "x": -66.22,
-      "y": -31.06
+      "x": -10.13,
+      "y": -16.6
     },
     {
       "person_id": 64,
       "name": "Gary Oldman",
       "recognizability": 10.0,
       "ordinal": 25,
-      "x": -107.76,
-      "y": -40.33
+      "x": -31.03,
+      "y": 3.47
     },
     {
       "person_id": 5081,
       "name": "Emily Blunt",
       "recognizability": 10.0,
       "ordinal": 35,
-      "x": -136.48,
-      "y": 123.04
+      "x": -45.87,
+      "y": 57.98
     },
     {
       "person_id": 5064,
       "name": "Meryl Streep",
       "recognizability": 10.0,
       "ordinal": 27,
-      "x": -50.38,
-      "y": 74.99
+      "x": -11.39,
+      "y": 37.75
     },
     {
       "person_id": 10205,
       "name": "Sigourney Weaver",
       "recognizability": 10.0,
       "ordinal": 86,
-      "x": 216.75,
-      "y": -182.51
+      "x": 93.29,
+      "y": -61.6
     },
     {
       "person_id": 4937,
       "name": "Vince Vaughn",
       "recognizability": 10.0,
       "ordinal": 74,
-      "x": 11.41,
-      "y": 258.58
+      "x": 34.64,
+      "y": 114.86
     },
     {
       "person_id": 35806,
       "name": "Shaquille O'Neal",
       "recognizability": 10.0,
       "ordinal": 168,
-      "x": 218.6,
-      "y": 470.0
+      "x": 101.89,
+      "y": 187.14
     },
     {
       "person_id": 55638,
       "name": "Kevin Hart",
       "recognizability": 10.0,
       "ordinal": 121,
-      "x": 47.16,
-      "y": 307.08
+      "x": 23.01,
+      "y": 143.35
     },
     {
       "person_id": 14837,
       "name": "Carol Burnett",
       "recognizability": 10.0,
       "ordinal": 150,
-      "x": -149.8,
-      "y": 492.41
+      "x": -54.92,
+      "y": 222.9
     },
     {
       "person_id": 2387,
       "name": "Patrick Stewart",
       "recognizability": 10.0,
       "ordinal": 59,
-      "x": -121.85,
-      "y": 13.04
+      "x": -36.96,
+      "y": 21.67
     },
     {
       "person_id": 11701,
       "name": "Angelina Jolie",
       "recognizability": 10.0,
       "ordinal": 82,
-      "x": -157.53,
-      "y": 212.35
+      "x": -58.23,
+      "y": 96.54
     },
     {
       "person_id": 56731,
       "name": "Jessica Alba",
       "recognizability": 10.0,
       "ordinal": 108,
-      "x": -23.67,
-      "y": 301.25
+      "x": 11.56,
+      "y": 123.27
     },
     {
       "person_id": 2282,
       "name": "Ben Kingsley",
       "recognizability": 10.0,
       "ordinal": 18,
-      "x": 111.15,
-      "y": -110.62
+      "x": 54.77,
+      "y": -37.13
     },
     {
       "person_id": 10400,
       "name": "Barbra Streisand",
       "recognizability": 10.0,
       "ordinal": 163,
-      "x": -2.24,
-      "y": 514.57
+      "x": -13.93,
+      "y": 199.67
     },
     {
       "person_id": 74568,
       "name": "Chris Hemsworth",
       "recognizability": 10.0,
       "ordinal": 52,
-      "x": 73.75,
-      "y": -120.84
+      "x": 35.24,
+      "y": -35.06
     },
     {
       "person_id": 325,
       "name": "Eminem",
       "recognizability": 10.0,
       "ordinal": 179,
-      "x": -383.27,
-      "y": 447.59
+      "x": -153.2,
+      "y": 242.12
     },
     {
       "person_id": 287,
       "name": "Brad Pitt",
       "recognizability": 10.0,
       "ordinal": 1,
-      "x": 2.32,
-      "y": 54.49
+      "x": 12.79,
+      "y": 34.35
     },
     {
       "person_id": 62,
       "name": "Bruce Willis",
       "recognizability": 10.0,
       "ordinal": 8,
-      "x": 91.23,
-      "y": 69.56
+      "x": 44.74,
+      "y": 37.09
     },
     {
       "person_id": 10990,
       "name": "Emma Watson",
       "recognizability": 10.0,
       "ordinal": 62,
-      "x": -88.82,
-      "y": -194.31
+      "x": -34.56,
+      "y": -57.89
     },
     {
       "person_id": 10980,
       "name": "Daniel Radcliffe",
       "recognizability": 10.0,
       "ordinal": 75,
-      "x": -178.67,
-      "y": -175.23
+      "x": -63.53,
+      "y": -46.99
     },
     {
       "person_id": 38225,
       "name": "Cher",
       "recognizability": 10.0,
       "ordinal": 125,
-      "x": 2.29,
-      "y": -374.98
+      "x": -32.28,
+      "y": -131.26
     },
     {
       "person_id": 10959,
       "name": "Shia LaBeouf",
       "recognizability": 10.0,
       "ordinal": 91,
-      "x": 108.93,
-      "y": -219.42
+      "x": 49.26,
+      "y": -74.59
     },
     {
       "person_id": 5049,
       "name": "John Hurt",
       "recognizability": 10.0,
       "ordinal": 41,
-      "x": -139.41,
-      "y": -206.12
+      "x": -51.78,
+      "y": -65.6
     },
     {
       "person_id": 2713,
       "name": "Linda Hamilton",
       "recognizability": 10.0,
       "ordinal": 194,
-      "x": 727.76,
-      "y": 518.56
+      "x": 504.44,
+      "y": 357.23
     },
     {
       "person_id": 10859,
       "name": "Ryan Reynolds",
       "recognizability": 10.0,
       "ordinal": 14,
-      "x": -45.53,
-      "y": 35.06
+      "x": -4.81,
+      "y": 22.52
     },
     {
       "person_id": 934,
       "name": "Russell Crowe",
       "recognizability": 10.0,
       "ordinal": 34,
-      "x": 83.36,
-      "y": -27.91
+      "x": 37.85,
+      "y": 1.49
     },
     {
       "person_id": 8891,
       "name": "John Travolta",
       "recognizability": 10.0,
       "ordinal": 89,
-      "x": 264.62,
-      "y": -1.04
+      "x": 106.01,
+      "y": 13.54
     },
     {
       "person_id": 8851,
       "name": "Whitney Houston",
       "recognizability": 10.0,
       "ordinal": 180,
-      "x": 25.48,
-      "y": -1078.11
+      "x": 26.25,
+      "y": -1076.09
     },
     {
       "person_id": 976,
       "name": "Jason Statham",
       "recognizability": 10.0,
       "ordinal": 45,
-      "x": 27.67,
-      "y": 161.7
+      "x": 35.39,
+      "y": 68.18
     },
     {
       "person_id": 380,
       "name": "Robert De Niro",
       "recognizability": 10.0,
       "ordinal": 19,
-      "x": 20.61,
-      "y": 121.12
+      "x": 18.4,
+      "y": 60.3
     },
     {
       "person_id": 1038,
       "name": "Jodie Foster",
       "recognizability": 10.0,
       "ordinal": 100,
-      "x": 112.65,
-      "y": 327.98
+      "x": 47.89,
+      "y": 136.75
     },
     {
       "person_id": 8784,
       "name": "Daniel Craig",
       "recognizability": 10.0,
       "ordinal": 114,
-      "x": -321.37,
-      "y": -34.36
+      "x": -114.39,
+      "y": 2.15
     },
     {
       "person_id": 82702,
       "name": "Michael Jackson",
       "recognizability": 10.0,
       "ordinal": 183,
-      "x": 477.06,
-      "y": -361.56
+      "x": 222.63,
+      "y": -122.96
     },
     {
       "person_id": 1100,
       "name": "Arnold Schwarzenegger",
       "recognizability": 10.0,
       "ordinal": 105,
-      "x": 349.76,
-      "y": 199.11
+      "x": 163.94,
+      "y": 108.58
     },
     {
       "person_id": 2888,
       "name": "Will Smith",
       "recognizability": 10.0,
       "ordinal": 68,
-      "x": 197.71,
-      "y": -45.71
+      "x": 77.05,
+      "y": 15.12
     },
     {
       "person_id": 8293,
       "name": "Marion Cotillard",
       "recognizability": 10.0,
       "ordinal": 15,
-      "x": -90.23,
-      "y": -149.3
+      "x": -20.25,
+      "y": -42.97
     },
     {
       "person_id": 1158,
       "name": "Al Pacino",
       "recognizability": 10.0,
       "ordinal": 63,
-      "x": 247.1,
-      "y": 96.48
+      "x": 95.44,
+      "y": 55.06
     },
     {
       "person_id": 1160,
       "name": "Michelle Pfeiffer",
       "recognizability": 10.0,
       "ordinal": 23,
-      "x": 6.68,
-      "y": -134.2
+      "x": 0.06,
+      "y": -33.82
     },
     {
       "person_id": 3061,
       "name": "Ewan McGregor",
       "recognizability": 10.0,
       "ordinal": 49,
-      "x": -30.28,
-      "y": -179.16
+      "x": -10.86,
+      "y": -61.85
     },
     {
       "person_id": 237405,
       "name": "Lady Gaga",
       "recognizability": 10.0,
       "ordinal": 134,
-      "x": 239.86,
-      "y": 351.55
+      "x": 98.69,
+      "y": 148.0
     },
     {
       "person_id": 5823,
       "name": "Julie Andrews",
       "recognizability": 10.0,
       "ordinal": 151,
-      "x": -135.13,
-      "y": -321.93
+      "x": -35.27,
+      "y": -106.2
     },
     {
       "person_id": 52139,
       "name": "Seth MacFarlane",
       "recognizability": 10.0,
       "ordinal": 109,
-      "x": -189.2,
-      "y": -272.29
+      "x": -61.59,
+      "y": -95.51
     },
     {
       "person_id": 14386,
       "name": "Beyonc\u00e9",
       "recognizability": 10.0,
       "ordinal": 144,
-      "x": 435.26,
-      "y": 3.08
+      "x": 188.13,
+      "y": 4.07
     },
     {
       "person_id": 2632,
       "name": "Chris Rock",
       "recognizability": 10.0,
       "ordinal": 71,
-      "x": 181.27,
-      "y": 220.47
+      "x": 89.96,
+      "y": 84.01
     },
     {
       "person_id": 15152,
       "name": "James Earl Jones",
       "recognizability": 10.0,
       "ordinal": 136,
-      "x": 343.26,
-      "y": -193.83
+      "x": 127.95,
+      "y": -71.25
     },
     {
       "person_id": 880,
       "name": "Ben Affleck",
       "recognizability": 10.0,
       "ordinal": 42,
-      "x": 184.28,
-      "y": 67.75
+      "x": 76.31,
+      "y": 39.17
     },
     {
       "person_id": 776,
       "name": "Eddie Murphy",
       "recognizability": 10.0,
       "ordinal": 147,
-      "x": 222.08,
-      "y": 274.94
+      "x": 113.55,
+      "y": 93.36
     },
     {
       "person_id": 738,
       "name": "Sean Connery",
       "recognizability": 10.0,
       "ordinal": 102,
-      "x": 349.99,
-      "y": -118.49
+      "x": 146.74,
+      "y": -50.1
     },
     {
       "person_id": 4169,
       "name": "Dave Chappelle",
       "recognizability": 10.0,
       "ordinal": 155,
-      "x": 164.94,
-      "y": 379.89
+      "x": 71.23,
+      "y": 157.45
     },
     {
       "person_id": 17605,
       "name": "Idris Elba",
       "recognizability": 10.0,
       "ordinal": 2,
-      "x": 12.62,
-      "y": -73.87
+      "x": 15.42,
+      "y": -34.64
     },
     {
       "person_id": 18277,
       "name": "Sandra Bullock",
       "recognizability": 10.0,
       "ordinal": 22,
-      "x": -100.44,
-      "y": 67.61
+      "x": -29.89,
+      "y": 38.7
     },
     {
       "person_id": 18897,
       "name": "Jackie Chan",
       "recognizability": 10.0,
       "ordinal": 176,
-      "x": 90.97,
-      "y": 436.36
+      "x": 66.48,
+      "y": 191.3
     },
     {
       "person_id": 18918,
       "name": "Dwayne Johnson",
       "recognizability": 10.0,
       "ordinal": 9,
-      "x": -35.54,
-      "y": -11.49
+      "x": -0.14,
+      "y": 4.39
     },
     {
       "person_id": 16866,
       "name": "Jennifer Lopez",
       "recognizability": 10.0,
       "ordinal": 76,
-      "x": 281.06,
-      "y": 59.36
+      "x": 132.73,
+      "y": 41.28
     },
     {
       "person_id": 11370,
       "name": "Elton John",
       "recognizability": 10.0,
       "ordinal": 156,
-      "x": -364.87,
-      "y": -246.65
+      "x": -143.21,
+      "y": -85.05
     },
     {
       "person_id": 16828,
       "name": "Chris Evans",
       "recognizability": 10.0,
       "ordinal": 36,
-      "x": -53.01,
-      "y": -122.54
+      "x": -21.48,
+      "y": -27.28
     },
     {
       "person_id": 16483,
       "name": "Sylvester Stallone",
       "recognizability": 10.0,
       "ordinal": 50,
-      "x": 169.18,
-      "y": 140.59
+      "x": 79.51,
+      "y": 67.73
     },
     {
       "person_id": 19292,
       "name": "Adam Sandler",
       "recognizability": 10.0,
       "ordinal": 84,
-      "x": 203.42,
-      "y": 166.2
+      "x": 78.21,
+      "y": 95.89
     },
     {
       "person_id": 7487,
       "name": "David Bowie",
       "recognizability": 10.0,
       "ordinal": 138,
-      "x": -46.11,
-      "y": -433.66
+      "x": -54.43,
+      "y": -154.22
     },
     {
       "person_id": 119454,
       "name": "Mars",
       "recognizability": 10.0,
       "ordinal": 160,
-      "x": 471.65,
-      "y": 507.31
+      "x": 253.89,
+      "y": 283.21
     },
     {
       "person_id": 56323,
       "name": "Tina Fey",
       "recognizability": 10.0,
       "ordinal": 117,
-      "x": -36.58,
-      "y": -228.05
+      "x": 48.11,
+      "y": -55.9
     },
     {
       "person_id": 955,
       "name": "Pen\u00e9lope Cruz",
       "recognizability": 10.0,
       "ordinal": 106,
-      "x": -244.85,
-      "y": 16.54
+      "x": -89.84,
+      "y": 7.4
     },
     {
       "person_id": 66586,
       "name": "Mariah Carey",
       "recognizability": 10.0,
       "ordinal": 186,
-      "x": 479.6,
-      "y": 210.57
+      "x": 196.37,
+      "y": 94.38
     },
     {
       "person_id": 524,
       "name": "Natalie Portman",
       "recognizability": 10.0,
       "ordinal": 31,
-      "x": 43.45,
-      "y": -107.61
+      "x": 22.78,
+      "y": -21.72
     },
     {
       "person_id": 2524,
       "name": "Tom Hardy",
       "recognizability": 10.0,
       "ordinal": 88,
-      "x": -221.64,
-      "y": -209.98
+      "x": -74.42,
+      "y": -68.9
     },
     {
       "person_id": 514,
       "name": "Jack Nicholson",
       "recognizability": 10.0,
       "ordinal": 99,
-      "x": 189.95,
-      "y": -227.17
+      "x": 73.82,
+      "y": -74.53
     },
     {
       "person_id": 500,
       "name": "Tom Cruise",
       "recognizability": 10.0,
       "ordinal": 60,
-      "x": 160.98,
-      "y": -73.58
+      "x": 54.65,
+      "y": -18.53
     },
     {
       "person_id": 3635,
       "name": "Elizabeth Taylor",
       "recognizability": 10.0,
       "ordinal": 182,
-      "x": -576.03,
-      "y": -10.13
+      "x": -237.38,
+      "y": 9.76
     },
     {
       "person_id": 13309,
       "name": "Oprah Winfrey",
       "recognizability": 10.0,
       "ordinal": 152,
-      "x": 339.82,
-      "y": 276.92
+      "x": 135.69,
+      "y": 125.2
     },
     {
       "person_id": 2461,
       "name": "Mel Gibson",
       "recognizability": 10.0,
       "ordinal": 126,
-      "x": 260.01,
-      "y": 239.6
+      "x": 97.41,
+      "y": 116.77
     },
     {
       "person_id": 54693,
       "name": "Emma Stone",
       "recognizability": 10.0,
       "ordinal": 51,
-      "x": -193.03,
-      "y": -8.86
+      "x": -74.77,
+      "y": -20.32
     },
     {
       "person_id": 111946,
       "name": "Britney Spears",
       "recognizability": 10.0,
       "ordinal": 157,
-      "x": 467.42,
-      "y": -118.26
+      "x": 187.1,
+      "y": -41.59
     },
     {
       "person_id": 7904,
       "name": "Billy Crystal",
       "recognizability": 10.0,
       "ordinal": 158,
-      "x": -257.04,
-      "y": 418.85
+      "x": -92.48,
+      "y": 180.86
     },
     {
       "person_id": 8170,
       "name": "Eva Mendes",
       "recognizability": 10.0,
       "ordinal": 142,
-      "x": 20.8,
-      "y": 366.89
+      "x": 0.18,
+      "y": 155.14
     },
     {
       "person_id": 55536,
       "name": "Melissa McCarthy",
       "recognizability": 10.0,
       "ordinal": 47,
-      "x": 145.7,
-      "y": -13.87
+      "x": 57.4,
+      "y": -1.07
     },
     {
       "person_id": 67773,
       "name": "Steve Martin",
       "recognizability": 10.0,
       "ordinal": 115,
-      "x": 280.15,
-      "y": -51.76
+      "x": 121.97,
+      "y": -10.97
     },
     {
       "person_id": 6730,
       "name": "Sacha Baron Cohen",
       "recognizability": 10.0,
       "ordinal": 122,
-      "x": -281.35,
-      "y": -188.33
+      "x": -106.24,
+      "y": -34.25
     }
   ],
   "edges": [
