@@ -25,6 +25,7 @@ OUTPUT_PATH = Path("optimization_outputs/shortest-paths.json")
 # Centers to analyze, ordered by recognizability / importance.
 # Add more person_ids here over time — each run processes them all.
 CENTER_ACTOR_IDS: list[int] = [
+    64,         # Gary Oldman
     4724,       # Kevin Bacon
     112,        # Cate Blanchett
     4491,       # Jennifer Aniston
